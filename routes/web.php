@@ -24,3 +24,7 @@ Route::get('/home', function () {
 Route::get('/Login', function () {
     return view('Login.index');
 });
+
+Route::get('/navbar', function () {
+    return view('navbar');
+});
