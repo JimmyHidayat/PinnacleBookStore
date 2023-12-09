@@ -30,7 +30,7 @@
               <div class="flex items-start">
                   <div class="flex items-start">
                       <div class="flex items-center h-5">
-                          <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-[#736356] rounded bg-[#736356] focus:ring-white focus:ring-white dark:bg-[#736356] dark:border-[#736356] dark:focus:ring-white dark:ring-offset-white dark:focus:ring-offset-white" required>
+                          <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-[#736356] rounded bg-[#736356] focus:ring-white dark:bg-[#736356] dark:border-[#736356] dark:focus:ring-white dark:ring-offset-white dark:focus:ring-offset-white" required>
                       </div>
                       <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-600">Remember me</label>
                   </div>
