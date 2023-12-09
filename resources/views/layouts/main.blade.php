@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,400&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
   <style>
     .self-center {
         font-family: 'Caveat', cursive;
