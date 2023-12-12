@@ -1,18 +1,18 @@
 @extends('layouts.main')
 
-
 @section('container')
+
 <!-- Carousel -->
-<div id="default-carousel" class="relative h-full w-full" data-carousel="static">
+<div id="default-carousel" class="relative w-auto" data-carousel="slide">
     <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+    <div class="relative h-56 overflow-hidden md:h-96">
          <!-- Item 1 -->
         <div class="hidden duration-200 ease-linear" data-carousel-item>
             <img src="img/carousel.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="circle">
         </div>
         <!-- Item 2 -->
         <div class="hidden duration-200 ease-linear" data-carousel-item>
-            <img src="img/Groot.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="groot">
+            <img src="img/2.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="groot">
         </div>
         <!-- Item 3 -->
         <div class="hidden duration-200 ease-linear" data-carousel-item="active">
@@ -38,31 +38,15 @@
         </span>
     </button>
 </div>
-{{-- Akhir Slider Controls --}}
+{{-- Akhir Carousel --}}
 
 
-<!-- card  -->
-{{-- <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-500 dark:border-gray-500">
-    <a href="#">
-        <img class="rounded-t-lg" src="img/buku1.jpg" alt="" />
-    </a>
-    <div class="p-5" >
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <div class="flex items-center justify-between">
-            <span class="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-            <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
-        </div>
-        </a>
-    </div>
-</div> --}}
+{{-- Card 1 --}}
 
+<h1 style="text-align: center">Books Collections</h1>
 <section class="mx-5 my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
     {{-- @foreach ($menus as $menu) --}}
     <div class="w-full max-w-[125%] bg-gray-50 border border-black rounded-lg shadow">
-        
         <img class="p-8 rounded-t-lg w-[100%]" src="img/laskarPelangi.jpg" alt="image" />
         {{-- <div class="p-8 rounded-t-lg w-[100%]" style="background-image: url('register/panther.jpg'); background-size: cover; background-position: center center;"> --}}
         <div class="px-5 pb-5">

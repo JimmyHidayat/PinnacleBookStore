@@ -5,15 +5,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         @vite('resources/css/app.css')
         <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.17/dist/full.min.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="resources/css/app.css">
+        {{-- <link rel="stylesheet" href="resources/css/app.css"> --}}
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="login">
-        <button class="bg-[#736356] hover:bg-[#D9AE84] text-white font-bold py-2 px-4 rounded">
+        {{-- @include('partials.navbar') --}}
+        {{-- <button class="bg-[#736356] hover:bg-[#D9AE84] text-white font-bold py-2 px-4 rounded">
             <svg class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-        </button>
+        </button> --}}
       <div class="w-full max-w-sm mx-auto p-3 bg-[#D9AE84] border border-[#D9AE84] rounded-lg shadow sm:p-2 md:p-4 dark:bg-[#D9AE84] dark:border-[#D9AE84] transform translate-y-20">
           <form class="space-y-6" action="#">
               <h5 class="text-center text-[35px] font-medium text-gray-900 dark:text-gray-600">Login</h5>
@@ -46,6 +47,5 @@
               </div>
           </form>
       </div>
-        
   </body>
 </html>
