@@ -8,7 +8,11 @@
         <link rel="stylesheet" href="resources/css/app.css">
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body class="Registrasi">
+    <div class="Registrasi">
+    <body>
+
+        @include('partials.navbar')
+
         <div class="w-full max-w-sm mx-auto p-3 bg-[#D9AE84] border border-[#D9AE84] rounded-lg shadow sm:p-2 md:p-4 dark:bg-[#D9AE84] dark:border-[#D9AE84] transform translate-y-20">
             <form class="max-w-md mx-auto">
             <h5 class="text-center text-[35px] font-medium text-gray-900 dark:text-gray-600 pb-5 ">Register</h5>
@@ -49,4 +53,5 @@
             </form>
         </div>
    </body>
+</div>
 </html>

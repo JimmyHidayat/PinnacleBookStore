@@ -59,10 +59,10 @@
     </div>
 </div> --}}
 
-<section class="mx-5 my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+<section class="mx-5 my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 home">
     {{-- @foreach ($menus as $menu) --}}
     <div class="w-full max-w-[125%] bg-gray-50 border border-black rounded-lg shadow">
-        
+
         <img class="p-8 rounded-t-lg w-[100%]" src="img/laskarPelangi.jpg" alt="image" />
         {{-- <div class="p-8 rounded-t-lg w-[100%]" style="background-image: url('register/panther.jpg'); background-size: cover; background-position: center center;"> --}}
         <div class="px-5 pb-5">
