@@ -1,6 +1,5 @@
 @extends('layouts.main')
 
-
 @section('container')
 <!-- Carousel -->
 <div id="default-carousel" class="relative h-full w-full" data-carousel="static">
