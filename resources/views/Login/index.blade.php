@@ -9,11 +9,9 @@
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="login">
-        <button class="bg-[#736356] hover:bg-[#D9AE84] text-white font-bold py-2 px-4 rounded">
-            <svg class="h-6 w-6 inline-block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-        </button>
+
+        @include('partials.navbar')
+
       <div class="w-full max-w-sm mx-auto p-3 bg-[#D9AE84] border border-[#D9AE84] rounded-lg shadow sm:p-2 md:p-4 dark:bg-[#D9AE84] dark:border-[#D9AE84] transform translate-y-20">
           <form class="space-y-6" action="#">
               <h5 class="text-center text-[35px] font-medium text-gray-900 dark:text-gray-600">Login</h5>
@@ -32,11 +30,11 @@
                       </div>
                       <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-600">Remember me</label>
                   </div>
-                  <a href="#" class="ms-auto text-sm font-bold hover:underline hover:underline hover:text-blue-500 dark:text-black">Forgot Password?</a>
+                  <a href="#" class="ms-auto text-sm font-bold  hover:underline hover:text-blue-500 dark:text-black">Forgot Password?</a>
               </div>
-              <button type="submit" class="w-full text-white hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-opacity-90 focus:ring-[#736356] bg-[#736356]">Login to your account</button>
+              <button type="submit" class="w-full text-white hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-opacity-90 bg-[#736356]">Login to your account</button>
               <div class="text-sm font-medium text-gray-500 dark:text-gray-600 text-capasity-30">
-                  Not registered? <a href="#" class="hover:underline hover:text-blue-500 dark:text-black">Create account</a>
+                  Not registered? <a href="/register" class="hover:underline hover:text-blue-500 dark:text-black">Create account</a>
               </div>
               <div class="flex flex-wrap items-center justify-center">
                 <a class="px-32 text-center text-sm font-medium text-gray-600 mb-2">-Or Continue-</a>
