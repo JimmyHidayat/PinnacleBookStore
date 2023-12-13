@@ -8,20 +8,24 @@
         <link rel="stylesheet" href="resources/css/app.css">
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
-    <body class="Registrasi">
-        <div class="w-full max-w-sm mx-auto p-3 bg-[#D9AE84] border border-[#D9AE84] rounded-lg shadow sm:p-2 md:p-4 dark:bg-[#D9AE84] dark:border-[#D9AE84] transform translate-y-20">
+    <div class="Registrasi">
+    <body>
+
+        @include('partials.navbar')
+
+        <div class="w-full max-w-sm mx-auto p-3 bg-[#D9AE84] border border-[#D9AE84] rounded-lg shadow sm:p-2 md:p-4  transform translate-y-20">
             <form class="max-w-md mx-auto">
-            <h5 class="text-center text-[35px] font-medium text-gray-900 dark:text-gray-600 pb-5 ">Register</h5>
+            <h5 class="text-center text-[35px] font-medium text-gray-600 pb-5 ">Register</h5>
             <div class="relative z-0 w-full mb-5 group">
                 <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-[#736356] border-gray-600 focus:outline-none focus:ring-0 focus:border-[#736356] peer" placeholder=" " required />
                 <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#736356] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
-                <input type="password" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-[#736356] dark:border-gray-600 dark:focus:border-[#736356] focus:outline-none focus:ring-0 focus:border-[#736356] peer" placeholder=" " required />
-                <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#736356] peer-focus:dark:text-[#736356] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+                <input type="password" name="floating_password" id="floating_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none text-[#736356] border-gray-600 focus:outline-none focus:ring-0 focus:border-[#736356] peer" placeholder=" " required />
+                <label for="floating_password" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#736356] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
-                <input type="password" name="repeat_password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-[#736356] dark:border-gray-600 dark:focus:border-[#736356] focus:outline-none focus:ring-0 focus:border-[#736356] peer" placeholder=" " required />
+                <input type="password" name="repeat_password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-600 appearance-none text-[#736356] focus:border-[#736356] focus:outline-none focus:ring-0 focus:border-[#736356] peer" placeholder=" " required />
                 <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#736356] peer-focus:dark:text-[#736356] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
             </div>
             <div class="grid md:grid-cols-2 md:gap-6">
@@ -49,4 +53,5 @@
             </form>
         </div>
    </body>
+</div>
 </html>
