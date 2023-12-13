@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,4 +32,8 @@ Route::get('/register', function () {
 
 Route::get('/navbar', function () {
     return view('navbar');
+});
+
+Route::get('/categories', function () {
+    return view('categories');
 });

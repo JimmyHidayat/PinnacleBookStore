@@ -16,14 +16,13 @@
             <a href="#" class="block py-2 px-3 text-[#D9AE84] bg-blue-700 rounded md:bg-transparent md:p-0 hover:text-white" aria-current="page">Home</a>
           </li>
           <li>
-            <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84] dark:hover:bg-gray-700 md:dark:hover:bg-transparent">MyBooks</a>
+            <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84]">MyBooks</a>
           </li>
           <li>
-            <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84] dark:hover:bg-gray-700 md:dark:hover:bg-transparent">Categories</a>
+            <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84]">Categories</a>
           </li>
           <li>
             <form>
-              <label for="default-search" class="mb-2 text-sm font-medium sr-only text-white">Search</label>
               <div class="relative">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-1 pointer-events-none">
                   <svg class="w-3 h-3 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
