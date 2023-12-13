@@ -14,6 +14,7 @@
     background-color: #efdece;
     background-size: cover;
     background-repeat: no-repeat;
+<<<<<<< Updated upstream
   }
 
   .Registrasi {
@@ -41,6 +42,10 @@
   }
 
 .home {
+=======
+}
+.Registrasi {
+>>>>>>> Stashed changes
     position: fixed;
     top: 0;
     left: 0;
