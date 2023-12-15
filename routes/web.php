@@ -2,6 +2,8 @@
 
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,13 +24,13 @@ Route::get('/home', function () {
     return view('home');
 });
 
-Route::get('/login', function () {
-    return view('login.index');
-});
+// Route::get('/login', function () {
+//     return view('login.index');
+// });
 
-Route::get('/register', function () {
-    return view('register.index');
-});
+// Route::get('/register', function () {
+//     return view('register.index');
+// });
 
 Route::get('/navbar', function () {
     return view('navbar');
@@ -37,3 +39,12 @@ Route::get('/navbar', function () {
 Route::get('/categories', function () {
     return view('categories');
 });
+
+
+Route::get('/dashboard', function() {
+    return view('dashboard.index');
+});
+
+Route::get('/login', [LoginController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);

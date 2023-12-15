@@ -6,6 +6,7 @@
   @vite('resources/css/app.css')
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css"  rel="stylesheet" />
 </head>
+<div class="categories">
 <body>
   @include('partials.navbar')
   <section class="mx-5 my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
@@ -59,5 +60,6 @@
         </div>
     </div>
 </body>
+</div>
 </html>
 
