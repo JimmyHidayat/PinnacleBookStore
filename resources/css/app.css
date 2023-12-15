@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 .allow-copy {
@@ -14,9 +14,9 @@
     background-color: #efdece;
     background-size: cover;
     background-repeat: no-repeat;
-  }
+}
 
-  .Registrasi {
+.Registrasi {
     position: fixed;
     top: 0;
     left: 0;
@@ -26,9 +26,9 @@
     background-color: #efdece;
     background-size: cover;
     background-repeat: no-repeat;
-  }
+}
 
-  .categories {
+.categories {
     position: fixed;
     top: 0;
     left: 0;
@@ -38,7 +38,7 @@
     background-color: #efdece;
     background-size: cover;
     background-repeat: no-repeat;
-  }
+}
 
 .home {
     position: fixed;
@@ -50,4 +50,4 @@
     background-color: #efdece;
     background-size: cover;
     background-repeat: no-repeat;
-}
+} */
