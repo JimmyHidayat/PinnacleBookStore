@@ -3,13 +3,33 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        @vite('resources/css/app.css')
+        {{-- @vite('resources/css/app.css') --}}
         <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.17/dist/full.min.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="resources/css/app.css">
+        <link rel="stylesheet" href="/css/style.css">
         <script src="https://cdn.tailwindcss.com"></script>
+
+        {{--  --}}
+
+        <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+        {{-- Font Google --}}
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
+        {{--  --}}
+        <title>PinnacleBookStore</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,400&display=swap" rel="stylesheet">
+        <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+
+        {{--  --}}
+
     </head>
-    <div class="login">
     <body class="allow-copy">
+    <div class="login">
 
         @include('partials.navbar')
 
@@ -39,7 +59,7 @@
               </div>
               <div class="flex flex-wrap items-center justify-center">
                 <a class="px-32 text-center text-sm font-medium text-gray-600 mb-5">-Or Continue-</a>
-                <button type="submit" class="flex items-center text-white hover:text-black bg-[#736356] hover:bg-[#EFDECE] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">
+                <button type="submit" class="flex items-center text-white hover:text-black bg-[#736356] hover:bg-[#EFDECE] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">
                     <img
                         src="img/google.png"
                         alt=""
@@ -50,6 +70,6 @@
           </form>
       </div>
 
-  </body>
     </div>
+  </body>
 </html>

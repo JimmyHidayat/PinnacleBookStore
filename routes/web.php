@@ -37,3 +37,8 @@ Route::get('/navbar', function () {
 Route::get('/categories', function () {
     return view('categories');
 });
+
+
+Route::get('/dashboard', function() {
+    return view('dashboard.index');
+});

@@ -1,4 +1,4 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
 @tailwind utilities;
 .allow-copy {
@@ -14,10 +14,9 @@
     background-color: #efdece;
     background-size: cover;
     background-repeat: no-repeat;
-<<<<<<< Updated upstream
-  }
+}
 
-  .Registrasi {
+.Registrasi {
     position: fixed;
     top: 0;
     left: 0;
@@ -27,9 +26,9 @@
     background-color: #efdece;
     background-size: cover;
     background-repeat: no-repeat;
-  }
+}
 
-  .categories {
+.categories {
     position: fixed;
     top: 0;
     left: 0;
@@ -39,13 +38,9 @@
     background-color: #efdece;
     background-size: cover;
     background-repeat: no-repeat;
-  }
+}
 
 .home {
-=======
-}
-.Registrasi {
->>>>>>> Stashed changes
     position: fixed;
     top: 0;
     left: 0;
@@ -55,4 +50,4 @@
     background-color: #efdece;
     background-size: cover;
     background-repeat: no-repeat;
-}
+} */
