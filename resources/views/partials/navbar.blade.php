@@ -13,13 +13,13 @@
       <div class="hidden w-full md:block md:w-auto" id="navbar-default">
         <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border rounded-lg md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 bg-[#736356] border-gray-700">
           <li>
-            <a href="#" class="block py-2 px-3 text-[#D9AE84] bg-blue-700 rounded md:bg-transparent md:p-0 hover:text-white" aria-current="page">Home</a>
+            <a href="/home" class="block py-2 px-3 text-[#D9AE84] bg-blue-700 rounded md:bg-transparent md:p-0 hover:text-white" aria-current="page">Home</a>
           </li>
           <li>
-            <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84]">MyBooks</a>
+            <a href="/MyBooks" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84]">MyBooks</a>
           </li>
           <li>
-            <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84]">Categories</a>
+            <a href="/categories" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84]">Categories</a>
           </li>
           <li>
               <div class="relative">

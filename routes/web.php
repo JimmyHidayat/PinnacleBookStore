@@ -36,10 +36,17 @@ Route::get('/navbar', function () {
     return view('navbar');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
 Route::get('/categories', function () {
     return view('categories');
 });
 
+Route::get('/MyBooks', function () {
+    return view('MyBooks');
+});
 
 Route::get('/dashboard', function() {
     return view('dashboard.index');

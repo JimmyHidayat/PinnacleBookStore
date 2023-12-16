@@ -4,7 +4,7 @@
 <!-- Carousel -->
 <div id="default-carousel" class="relative h-full w-full" data-carousel="static">
     <!-- Carousel wrapper -->
-    <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+    <div class="relative h-56 overflow-hidden rounded-lg md:h-96 ml-8">
          <!-- Item 1 -->
         <div class="hidden duration-200 ease-linear" data-carousel-item>
             <img src="img/carousel.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="circle">
@@ -39,11 +39,16 @@
 </div>
 {{-- Akhir Slider Controls --}}
 
-
-<section class="mx-5 my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 home">
+<div class="mt-8 container mx-auto">
+    <div class="flex items-center justify-between">
+        <h1 class="font-bold text-2xl ml-8">Top products</h1>
+        <a href="/categories" class="with-banner inline-block py-2 px-4 bg-[#736356] text-white rounded-md transition duration-300 ease-in-out hover:bg-[#a28160]">Lihat Semua</a>
+    </div>
+</div>
+<!-- card 1 -->
+<section class="mx-5 my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 home ml-6">
     {{-- @foreach ($menus as $menu) --}}
-    <div class="w-full max-w-[125%] bg-gray-50 border border-black rounded-lg shadow">
-
+    <div class="w-full max-w-[125%] border border-black rounded-lg shadow">
         <img class="p-8 rounded-t-lg w-[100%]" src="img/laskarPelangi.jpg" alt="image" />
         {{-- <div class="p-8 rounded-t-lg w-[100%]" style="background-image: url('register/panther.jpg'); background-size: cover; background-position: center center;"> --}}
         <div class="px-5 pb-5">
@@ -67,7 +72,7 @@
     </div>
 
     <!-- card 2 -->
-    <div class="w-full max-w-[125%] bg-gray-50 border border-black rounded-lg shadow">
+    <div class="w-full max-w-[125%] border border-black rounded-lg shadow">
         <img class="p-8 rounded-t-lg w-[100%]" src="img/dikta.jpg" alt="image" />
         {{-- <div class="p-8 rounded-t-lg w-[100%]" style="background-image: url('register/panther.jpg'); background-size: cover; background-position: center center;"> --}}
         <div class="px-5 pb-5">
@@ -91,7 +96,7 @@
     </div>
 
     <!-- card 3 -->
-    <div class="w-full max-w-[125%] bg-gray-50 border border-black rounded-lg shadow">
+    <div class="w-full max-w-[125%] border border-black rounded-lg shadow">
         <img class="p-8 rounded-t-lg w-[100%]" src="img/pulang.jpg" alt="image" />
         {{-- <div class="p-8 rounded-t-lg w-[100%]" style="background-image: url('register/panther.jpg'); background-size: cover; background-position: center center;"> --}}
         <div class="px-5 pb-5">
@@ -115,7 +120,7 @@
     </div>
 
     <!-- card 4 -->
-    <div class="w-full max-w-[125%] bg-gray-50 border border-black rounded-lg shadow">
+    <div class="w-full max-w-[125%] border border-black rounded-lg shadow">
         <img class="p-8 rounded-t-lg w-[100%]" src="img/hujan.jpg" alt="image" />
         {{-- <div class="p-8 rounded-t-lg w-[100%]" style="background-image: url('register/panther.jpg'); background-size: cover; background-position: center center;"> --}}
         <div class="px-5 pb-5">
@@ -136,6 +141,7 @@
                  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
             </div>
         </div>
+    </div>
     </div>
     {{-- @endforeach --}}
 </section>

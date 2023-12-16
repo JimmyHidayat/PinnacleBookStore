@@ -40,6 +40,18 @@
     background-repeat: no-repeat;
 }
 
+.d-flex {
+    display: flex;
+    grid-tamplate-colums: repeat(2, minmax(0, 1fr));
+    margin-left: 1.5rem;
+    gap: 1rem;
+}
+
+.image-container {
+    flex: 1;
+    max-width: 200px;
+}
+
 .home {
     position: fixed;
     top: 0;
