@@ -33,7 +33,7 @@
 
         @include('partials.navbar')
 
-        <div class="w-full max-w-sm mx-auto p-3 bg-[#D9AE84] border border-[#D9AE84] rounded-lg shadow sm:p-2 md:p-4  transform translate-y-20">
+        <div class="w-full mt-8 h-auto max-w-sm mx-auto p-3 bg-[#D9AE84] border border-[#D9AE84] rounded-lg shadow sm:p-2 md:p-4  transform translate-y-20">
             <form action="/register" method="POST" class="max-w-md mx-auto">
                 @if(session()->has('failed'))
                     <div id="notification" class="w-full max-w-xs p-4 text-gray-900 bg-white rounded-lg shadow dark:bg-gray-800 dark:text-gray-300" role="alert">
