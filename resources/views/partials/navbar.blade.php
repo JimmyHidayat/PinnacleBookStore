@@ -1,5 +1,6 @@
   <!-- Navbar -->
-  <nav class="bg-[#736356] border-gray-200" >
+  {{-- <nav class="bg-[#736356] border-gray-200" > --}}
+  <nav class="bg-[#736356] border-gray-200 fixed w-full z-50 top-0 start-0 border-b dark:border-gray-600">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="/dashboard" class="flex items-center space-x-3 rtl:space-x-reverse">
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white" style="font-family: 'Caveat', cursive;">PinnacleBookStore</span>
@@ -21,6 +22,7 @@
           <li>
             <a href="/categories" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84]">Categories</a>
           </li>
+          
           <li>
               <div class="relative">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-1 pointer-events-none">
@@ -30,12 +32,30 @@
                 <input type="search" id="search" class="block w-full p-1 ps-5 text-sm text-[#736356] border border-[#D9AE84] rounded-lg bg-gray-50 focus:ring-[#D9AE84] focus:border-[#D9AE84]  "placeholder="Cari judul buku" required>
               </div>
             </li>
-              <li>
-                <a href="/login" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84] dark:hover:bg-gray-700 md:dark:hover:bg-transparent"><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</a>
-              </li>
-              <li>
-                <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84] dark:hover:bg-gray-700 md:dark:hover:bg-transparent"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
-              </li>
+            <li>
+              <a href="#" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84] dark:hover:bg-gray-700 md:dark:hover:bg-transparent"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+            </li>
+                @auth
+                
+                <li class="dropdown ml-3">
+                  <form action="/logout" method="POST">
+                    @csrf
+                  {{-- <button type="button" style="font-size: 20px" class="text-white dropdown-toggle flex items-center">
+                    Welcome Back, {{ auth()->user()->username }} --}}
+                    <button type="submit" style="font-size: 20px" class="text-white">
+                      Welcome Back, {{ auth()->user()->username }}
+                    </button>
+                      {{-- <a style="font-size: 20px"  id="dropdownNavbarLink" class="text-white dropdown-toggle flex items-center" data-dropdown-toggle="dropdownNavbar" href="">Welcome Back, {{ auth()->user()->username }}</a> --}}
+                  {{-- </button> --}}
+                  </form>
+                </li>
+                @else
+                
+                <li>
+                  <a href="/login" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84] dark:hover:bg-gray-700 md:dark:hover:bg-transparent"><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</a>
+                </li>
+                @endauth
+             
         </ul>
       </div>
     </div>

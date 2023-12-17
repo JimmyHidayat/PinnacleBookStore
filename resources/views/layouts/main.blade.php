@@ -10,12 +10,14 @@
    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap" rel="stylesheet">
   {{--  --}}
   <title>PinnacleBookStore</title>
+  {{-- <link rel="stylesheet" href="/css/style.css"> --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css"  rel="stylesheet" />
   <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
   {{-- <style>
     .self-center {
@@ -27,7 +29,7 @@
   
         @include('partials.navbar')
 
-            <div class="container mt-4">
+            <div class="container mt-20">
                 @yield('container')
             </div>
 
