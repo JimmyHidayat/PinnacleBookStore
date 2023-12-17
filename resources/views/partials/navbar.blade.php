@@ -37,18 +37,18 @@
             </li>
                 @auth
                 
-                <li class="dropdown ml-3">
+                
+                  <a href="/dashboard" style="font-size: 18px" class="text-white">
+                    Welcome Back, {{ auth()->user()->username }}
+                  </a>
+
                   <form action="/logout" method="POST">
                     @csrf
-                  {{-- <button type="button" style="font-size: 20px" class="text-white dropdown-toggle flex items-center">
-                    Welcome Back, {{ auth()->user()->username }} --}}
-                    <button type="submit" style="font-size: 20px" class="text-white">
-                      Welcome Back, {{ auth()->user()->username }}
-                    </button>
-                      {{-- <a style="font-size: 20px"  id="dropdownNavbarLink" class="text-white dropdown-toggle flex items-center" data-dropdown-toggle="dropdownNavbar" href="">Welcome Back, {{ auth()->user()->username }}</a> --}}
-                  {{-- </button> --}}
+                    <li>
+                      <button type="submit" class="block text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84] dark:hover:bg-gray-700 md:dark:hover:bg-transparent"><i class="fa-solid fa-arrow-right-to-bracket"></i>Logout</button>
+                    </li>
                   </form>
-                </li>
+                
                 @else
                 
                 <li>

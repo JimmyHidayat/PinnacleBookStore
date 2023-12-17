@@ -77,13 +77,13 @@
               <h5 class="mb-5 text-center text-[35px] font-medium text-gray-600">Login</h5>
               <div>
                   <label for="email" class="block mb-5 text-sm font-medium text-gray-600">Your email</label>
-                  <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror mb-5 bg-[#D9AE84] border border-yellow-900 text-[#736356] text-sm rounded-lg focus:border-[#D9AE84] block w-full p-2.5 placeholder-yellow-800" placeholder="example@gmail.com" autofocus required value="{{ old('email') }}">
+                  <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror mb-5 bg-[#D9AE84] border border-yellow-900 text-[#736356] text-sm rounded-lg focus:border-[#D9AE84] block w-full p-2.5 placeholder-yellow-800" placeholder="example@gmail.com" autofocus value="{{ old('email') }}">
 
                    
               </div>
               <div>
                   <label for="password" class="block mb-5 text-sm font-medium text-gray-600">Your password</label>
-                  <input type="password" name="password" id="password" placeholder="*****" class="mb-5 bg-[#D9AE84] border border-yellow-900 text-[#736356] text-sm rounded-lg focus:ring-[#D9AE84] focus:border-[#D9AE84] block w-full p-2.5 placeholder-yellow-800" required>
+                  <input type="password" name="password" id="password" placeholder="*****" class="mb-5 bg-[#D9AE84] border border-yellow-900 text-[#736356] text-sm rounded-lg focus:ring-[#D9AE84] focus:border-[#D9AE84] block w-full p-2.5 placeholder-yellow-800">
               </div>
               <div class="flex items-start">
                   <div class="flex items-start mb-5">
@@ -99,14 +99,14 @@
                   Not registered? <a href="/register" class="hover:underline hover:text-blue-500 dark:text-black">Create account</a>
               </div>
               <div class="flex flex-wrap items-center justify-center">
-                <a class="px-32 text-center text-sm font-medium text-gray-600 mb-5">-Or Continue-</a>
-                <button type="submit" class="flex items-center text-white hover:text-black bg-[#736356] hover:bg-[#EFDECE] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">
+                <a  class="px-32 text-center text-sm font-medium text-gray-600 mb-5">-Or Continue-</a>
+                <a href="{{ route('google-auth') }}" class="flex items-center text-white hover:text-black bg-[#736356] hover:bg-[#EFDECE] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">
                     <img
                         src="img/google.png"
                         alt=""
                         class="w-5 h-5 rounded block object-cover align-middle"
-                    > <span class="ml-3 text-md"> Login with google</span>
-                </button>
+                    > <span class="ml-3 text-md"> Login with google </span>
+                </a>
               </div>
           </form>
       </div>

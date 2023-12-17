@@ -91,6 +91,16 @@
                 <div class="text-sm font-medium text-gray-500 dark:text-gray-600 text-capasity-30">
                     Already registered? <a href="/login" class="hover:underline hover:text-blue-500 dark:text-black">Login</a>
                 </div>
+                <div class="flex flex-wrap items-center justify-center mt-4">
+                    <a class="px-32 text-center text-sm font-medium text-gray-600 mb-5">-Or Continue-</a>
+                    <button type="submit" class="flex items-center text-white hover:text-black bg-[#736356] hover:bg-[#EFDECE] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">
+                        <img
+                            src="img/google.png"
+                            alt=""
+                            class="w-5 h-5 rounded block object-cover align-middle"
+                        > <span class="ml-3 text-md"> Register with google</span>
+                    </button>
+                  </div>
             </form>
         </div>
     </div>
