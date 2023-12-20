@@ -20,14 +20,22 @@
 
         <li class="dropdown ml-3">
             <button type="button" class="dropdown-toggle flex items-center">
-                <img src="/img/eye.png" alt=""
-                    class="w-8 h-8 rounded block object-cover align-middle" />
+                {{-- <img src="/img/eye.png" alt="" class="w-8 h-8 rounded block object-cover align-middle" /> --}}
+                <h1 style="font-size: 18px">Welcome Back, {{ auth()->user()->username }} </h1>
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 18">
+                    <path d="M7 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm2 1H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"/>
+                  </svg>
+                
             </button>
             <ul
                 class="dropdown-menu shadow-md shadow-black/5 z-30 hidden py-1.5 rounded-md bg-white w-full max-w-[140px]">
                 <li>
-                    <a href="#"
-                        class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Logout</a>
+                <form action="/logout" method="POST">
+                    @csrf
+                    <button
+                        class="flex items-center text-[13px] py-1.5 px-4 text-gray-600 hover:text-blue-500 hover:bg-gray-50">Logout
+                    </button>
+                </form>
                 </li>
             </ul>
         </li>

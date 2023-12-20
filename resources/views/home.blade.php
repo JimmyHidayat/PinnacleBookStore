@@ -100,34 +100,44 @@
 </div>
 <!-- card 1 -->
 <section class="mx-5 my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 home ml-6">
-    {{-- @foreach ($menus as $menu) --}}
+    @foreach ($posts as $post)
     <div class="w-full max-w-[125%] border border-black rounded-lg shadow">
         <img class="p-8 rounded-t-lg w-[100%]" src="img/laskarPelangi.jpg" alt="image" />
         {{-- <div class="p-8 rounded-t-lg w-[100%]" style="background-image: url('register/panther.jpg'); background-size: cover; background-position: center center;"> --}}
         <div class="px-5 pb-5">
-            <a href="#">
-                <h5 class="text-xl font-sans hover:font-serif tracking-tight text-gray-900">Laskar Pelangi</h5>
-            </a>
-            <a href="">
-                <h3 class="text-xl font-sans hover:font-serif tracking-tight text-gray-900">Novel</h3>
-            </a>
-            <div class="flex items-center mt-2.5 mb-5">
+            <ul>
+                <li>
+                    <a href="">
+                        <h5 class="text-xl font-sans hover:font-serif tracking-tight text-gray-900">{{ $post->author }}</h5>
+                    </a>
+                </li>
+                <li>
+                        <h3 class="text-xl font-sans tracking-tight text-gray-900">{{ $post->title }}</h3>  
+                </li>
+                <li>
+                    <a href="">
+                        <h3 class="text-xl font-sans hover:font-serif tracking-tight text-gray-900">{{ $post->category->name }}</h3>
+                    </a>
+                </li>
+            </ul>
+            {{-- <div class="flex items-center mt-2.5 mb-5">
                 <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                    {{-- {{ Str::ucfirst($menu->category) }} --}}
+                    {{ Str::ucfirst($menu->category) }}
                 </div>
-            </div>
+            </div> --}}
             <div class="flex items-center justify-between">
-                <small class="text-2xl font-bold text-gray-900">Rp. 50.000</small>
+                <small class="text-2xl font-bold text-gray-900">Rp. {{ $post->price }}</small>
                 <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5
                  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
             </div>
         </div>
     </div>
+    @endforeach
 
     <!-- card 2 -->
-    <div class="w-full max-w-[125%] border border-black rounded-lg shadow">
+    {{-- <div class="w-full max-w-[125%] border border-black rounded-lg shadow">
         <img class="p-8 rounded-t-lg w-[100%]" src="img/dikta.jpg" alt="image" />
-        {{-- <div class="p-8 rounded-t-lg w-[100%]" style="background-image: url('register/panther.jpg'); background-size: cover; background-position: center center;"> --}}
+        <div class="p-8 rounded-t-lg w-[100%]" style="background-image: url('register/panther.jpg'); background-size: cover; background-position: center center;">
         <div class="px-5 pb-5">
             <a href="#">
                 <h5 class="text-xl font-sans hover:font-serif tracking-tight text-gray-900">dikta & hukum</h5>
@@ -137,7 +147,7 @@
             </a>
             <div class="flex items-center mt-2.5 mb-5">
                 <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                    {{-- {{ Str::ucfirst($menu->category) }} --}}
+                    {{ Str::ucfirst($menu->category) }}
                 </div>
             </div>
             <div class="flex items-center justify-between">
@@ -146,12 +156,12 @@
                  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- card 3 -->
-    <div class="w-full max-w-[125%] border border-black rounded-lg shadow">
+    {{-- <div class="w-full max-w-[125%] border border-black rounded-lg shadow">
         <img class="p-8 rounded-t-lg w-[100%]" src="img/pulang.jpg" alt="image" />
-        {{-- <div class="p-8 rounded-t-lg w-[100%]" style="background-image: url('register/panther.jpg'); background-size: cover; background-position: center center;"> --}}
+        <div class="p-8 rounded-t-lg w-[100%]" style="background-image: url('register/panther.jpg'); background-size: cover; background-position: center center;">
         <div class="px-5 pb-5">
             <a href="#">
                 <h5 class="text-xl font-sans hover:font-serif tracking-tight text-gray-900">Pulang</h5>
@@ -161,7 +171,7 @@
             </a>
             <div class="flex items-center mt-2.5 mb-5">
                 <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                    {{-- {{ Str::ucfirst($menu->category) }} --}}
+                    {{ Str::ucfirst($menu->category) }}
                 </div>
             </div>
             <div class="flex items-center justify-between">
@@ -170,12 +180,12 @@
                  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- card 4 -->
-    <div class="w-full max-w-[125%] border border-black rounded-lg shadow">
+    {{-- <div class="w-full max-w-[125%] border border-black rounded-lg shadow">
         <img class="p-8 rounded-t-lg w-[100%]" src="img/hujan.jpg" alt="image" />
-        {{-- <div class="p-8 rounded-t-lg w-[100%]" style="background-image: url('register/panther.jpg'); background-size: cover; background-position: center center;"> --}}
+        <div class="p-8 rounded-t-lg w-[100%]" style="background-image: url('register/panther.jpg'); background-size: cover; background-position: center center;">
         <div class="px-5 pb-5">
             <a href="#">
                 <h5 class="text-xl font-sans hover:font-serif tracking-tight text-gray-900">Hujan</h5>
@@ -185,7 +195,7 @@
             </a>
             <div class="flex items-center mt-2.5 mb-5">
                 <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                    {{-- {{ Str::ucfirst($menu->category) }} --}}
+                    {{ Str::ucfirst($menu->category) }}
                 </div>
             </div>
             <div class="flex items-center justify-between">
@@ -194,7 +204,7 @@
                  text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Add to cart</a>
             </div>
         </div>
-    </div>
+    </div> --}}
     </div>
     {{-- @endforeach --}}
 </section>
