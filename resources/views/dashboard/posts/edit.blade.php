@@ -4,7 +4,7 @@
 
 <h1 class="mb-5 justify-center items-center text-center font-semibold">Edit Post</h1>
 
-<form action="/dashboard/posts/{{ $post->id }}" method="post" class="max-w-sm mx-auto">
+<form action="/dashboard/posts/{{ $post->id }}" method="post" class="max-w-sm mx-auto" enctype="multipart/form-data">
     @method('put')
     @csrf
     <div class="mb-5">
@@ -24,7 +24,7 @@
         <input type="text" name="price" id="price"  class="bg-gray-50 border border-black-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ old('price', $post->price) }}">
     </div>
    
-    <div>
+    <div class="mb-4">
         <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category</label>
         <select id="category_id" name="category_id" class="bg-gray-50 border border-black-800 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value="{{ old('category_id', $post->category->name) }}">
     
@@ -35,13 +35,38 @@
         <option value="4">Komik</option>
         </select>
     </div>
-    <div class="mt-8">
+    <div class="col-span-2">
+        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image">Edit Image</label>
+        <input type="hidden" name="oldImage" value="{{ $post->image }}">
+        @if($post->image)
+            <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="img-preview block ">
+        @else
+            <img class="img-preview" style="max-height: 400px" style="max-width: 300px">
+        @endif
+        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="image" name="image" type="file" onchange="previewImage">
+    </div>
+    <div class="mt-4">
         <button type="submit" class="justify-center items-center text-gray-900 hover:text-white border border-gray-900 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-yellow-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900">
             Edit Post
         </button>
     </div>
   </form>
   
+  <script>
+    function previewImage() {
+        const image = document.querySelector('#image');
+        const imgPreview = document.querySelector('.img-preview');
+
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+
+        oFReader.onload = function(oFREvent) {
+            imgPreview.src = oFREvent.target.result;
+        }
+    }
+  </script>
 
 
 

@@ -93,7 +93,7 @@
 
             <div class="mt-8 container mx-auto">
                 <div class="flex items-center justify-between">
-                    <h1 class="font-bold text-2xl ml-8">Top products</h1>
+                    <h1 class="font-bold text-2xl ml-8">Rekomendasi Untukmu</h1>
                     <a href="/categories" class="with-banner inline-block py-2 px-4 bg-[#736356] text-white rounded-md transition duration-300 ease-in-out hover:bg-[#a28160]">Lihat Semua</a>
                 </div>
             </div>
@@ -104,7 +104,13 @@
             <section class="mx-5 my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 home ml-6">
                 @foreach ($posts as $post)
                 <div class="w-full max-w-[125%] border border-black rounded-lg shadow">
-                    <img class="p-8 rounded-t-lg w-[100%]" src="https://source.unsplash.com/303x475?{{ $post->title }}" alt="{{ $post->title }}" />
+                    @if ($post->image)
+                    <div class="max-h-475px max-w-303px overflow-hidden">
+                        <img class="p-8 rounded-t-lg w-[100%]" src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" />
+                    </div>
+                    @else
+                    <img class="p-8 rounded-t-lg w-[100%]" src="https://cdn.gramedia.com/uploads/items/9786020523316_Melangkah_UV_Spot_R4-1.jpg?{{ $post->title }}" alt="{{ $post->title }}" />
+                    @endif
                     <div class="px-5 pb-5">
                         <ul>
                             <li>
