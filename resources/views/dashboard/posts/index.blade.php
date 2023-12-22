@@ -75,7 +75,7 @@
                   </button>
               </div>
               <!-- Modal body -->
-            <form action="{{ route('create_post') }}" method="POST" class="p-4 md:p-5">
+            <form action="{{ route('create_post') }}" method="POST" class="p-4 md:p-5" enctype="multipart/form-data"> 
                 @csrf
                   <div class="grid gap-4 mb-4 grid-cols-2">
                       <div class="col-span-2">
@@ -89,6 +89,11 @@
                       <div class="col-span-2">
                           <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Genre</label>
                           <input type="text" name="genre" id="genre" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required="" value="{{ old('genre') }}">
+                      </div>
+                      <div class="col-span-2">
+                        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image">Upload Image</label>
+                        <img class="img-preview max-h-10 max-w-sm ">
+                        <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="image" name="image" type="file" onchange="previewImage">
                       </div>
                       <div class="col-span-2 sm:col-span-1">
                           <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Price</label>
@@ -227,4 +232,20 @@
     {{-- </main> --}}
     <!-- end: Main -->
 </div>
+
+<script>
+    function previewImage() {
+        const image = document.querySelector('#image');
+        const imgPreview = document.querySelector('.img-preview');
+
+        imgPreview.style.display = 'block';
+
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(image.files[0]);
+
+        oFReader.onload = function(oFREvent) {
+            imgPreview.src = oFREvent.target.result;
+        }
+    }
+</script>
 @endsection 

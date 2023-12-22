@@ -29,7 +29,7 @@
   
         @include('partials.navbar')
 
-            <div class="container mt-20">
+            <div class="container my-20">
                 @yield('container')
             </div>
 

@@ -34,16 +34,24 @@ class PostController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+        // return $request->file('image')->store('post-images');
+
         $validatedData = $request->validate([
             'author' => 'required|max:255',
             'title' => 'required|unique:posts',
+            // 'slug' => 'required|unique:posts',
             'genre' => 'required',
+            'image' => 'image|file|max:10000',
             'category_id' => 'required',
             'price' => 'required'
 
         ]);
 
-        // $validatedData[''] = auth()->user()->id;
+        if($request->file('image')) {
+            $validatedData['image'] = $request->file('image')->store('post-images');
+        }
+
+        // $validatedData['user_id'] = auth()->user()->id;
         Post::create($validatedData);
 
         return redirect('/dashboard/posts')->with('success', 'New book has been added!');
