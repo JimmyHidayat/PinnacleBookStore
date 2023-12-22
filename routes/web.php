@@ -83,4 +83,5 @@ Route::get('/auth/google/call-back', [GoogleAuthController::class, 'callbackGoog
 Route::resource('/dashboard/posts', DashboardPostController::class)->middleware('auth');
 
 Route::post('/create', [PostController::class, 'store'])->name('create_post');
+Route::get('/dashboard/posts/{post:title}/edit', [DashboardPostController::class, 'edit']);
 Route::get('/show/{post:title}', [PostController::class, 'show'])->name('show_post');

@@ -44,7 +44,6 @@ class PostController extends Controller
         ]);
 
         // $validatedData[''] = auth()->user()->id;
-        // dd($request->all());
         Post::create($validatedData);
 
         return redirect('/dashboard/posts')->with('success', 'New book has been added!');
@@ -67,7 +66,7 @@ class PostController extends Controller
      */
     public function edit(Post $post)
     {
-        //
+        
     }
 
     /**
@@ -83,6 +82,9 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
-        //
+        // dd($post->all());
+        // Post::destroy($post->id);
+
+        // return redirect('/dashboard/posts')->with('success', 'book has been deleted!');
     }
 }
