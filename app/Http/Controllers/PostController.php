@@ -14,9 +14,20 @@ class PostController extends Controller
      */
     public function index()
     {
+
+
+        // $posts = Post::latest();
+
+        // if(request('search')) {
+        //     $posts->where('title', 'like', '%' . request('search') . '%');
+        // }
+        // dd(request('search'));
+
         return view('posts.index', [
             "title" => "Posts",
-            "posts" => Post::all()
+            "posts" => Post::all(),
+            // "posts" => $posts->get()
+            "posts" => Post::latest()->filter(request(['search', 'category']))->get()
         ]);
     }
 
@@ -43,7 +54,8 @@ class PostController extends Controller
             'genre' => 'required',
             'image' => 'image|file|max:10000',
             'category_id' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'description' => 'required'
 
         ]);
 

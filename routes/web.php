@@ -46,7 +46,7 @@ Route::get('/', function () {
     return view('home',
     [
         "title" => "Home",
-        'posts' => Post::all()
+        'posts' => Post::latest()->filter(request(['search', 'category']))->paginate(8)->withQueryString()
     ]
 );
 });
@@ -54,8 +54,23 @@ Route::get('/', function () {
 
 
 Route::get('/categories', function () {
-    return view('categories');
+    return view('categories', [
+        "title" => "Post Categories",
+        "categories" => Category::all(),
+        'posts' => Post::all()
+    ]);
 });
+
+Route::get('/categories/{category:slug}', function (Category $category) {
+    return view('categories', [
+        "title" => $category->name,
+        "posts" => $category->posts,
+        "category" => $category->name,
+        "categories" => Category::all(),
+        "posts" => Post::all()
+    ]);
+});
+
 
 Route::get('/MyBooks', function () {
     return view('MyBooks');

@@ -2,51 +2,23 @@
 
 @section('container')
 
-{{-- <style>
-    .max-w-md {
-        display: hidden;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5); /* Adjust the background color and opacity as needed */
-        z-index: 1000;
-    }
-
-    .max-w-md {
-        width: 100%;
-        max-width: 30rem; /* Adjust the maximum width as needed */
-    }
-</style>
-
-
-<div class="max-w-md bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-    <a href="#">
-        <img class="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
-    </a>
-    <div class="p-5">
-        <a href="#">
-            <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $post->title }}</h5>
-        </a>
-        <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
-        <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-            Read more
-             <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
-            </svg>
-        </a>
+    <h1 style="font-size: 30px; text-align:center;">Post By. {{ $post->author }}</h1>
+    <div class="flex justify-center">
+        @if (str_contains($post->image, 'https:')) 
+        <img class="mt-4" src="{{ $post->image }}" alt="{{ $post->title }}" style="width: 250px; height: 350px;">
+        @else
+        <img class="mt-4" src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" style="width: 250px; height: 350px;">
+        @endif
     </div>
-</div> --}}
 
-
-
-<p>{{ $post->title }}</p>
-<p>{{ $post->author }}</p>
-<p>{{ $post->category->name }}</p>
-<p>{{ $post->genre }}</p>
-<p>{{ $post->price }}</p>
-
+    <div class="flex justify-center">
+        <h1 style="font-size: 30px">{{  $post->title }}</h1>
+    </div>
+    <div class="flex justify-center">
+        <h2 style="font-size: 20px">{{  $post->author }}</h2>
+    </div>
+    <div class="flex justify-center max-w-screen mt-4">
+        <p class="text-sm text-center">{{ $post->description }}</p>
+    </div>
+    
 @endsection

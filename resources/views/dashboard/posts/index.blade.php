@@ -104,18 +104,17 @@
                           <select id="category_id" name="category_id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
                               <option selected="">Select category</option>
                               <option value="1">Novel</option>
-                              <option value="2">Sains</option>
+                              <option value="2">Buku</option>
                               <option value="3">Biografi</option>
                               <option value="4">Komik</option>
                           </select>
                       </div>
-                        {{-- <div class="col-span-2">
+                        <div class="col-span-2">
                             <div class="px-4 py-2 bg-white rounded-b-lg dark:bg-gray-800">
-                                    <textarea id="sinopsis" name="sinopsis" rows="8" class="block w-full px-0 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="Write an article...">
-                                        {{ old('sinopsis') }}
+                                    <textarea id="description" name="description" rows="8" class="block w-full px-0 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="">
                                     </textarea>
                             </div>
-                        </div> --}}
+                        </div>
                     
                     </div>
                         <button type="submit" class="text-Black inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-lg px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
@@ -185,12 +184,6 @@
                             <td class="py-2 px-4">
                                 <span class="text-[13px] font-medium text-gray-600">{{ $post->genre }}</span>
                             </td>
-                            {{-- <td class="py-2 px-4">
-                                <span class="text-[13px] font-medium text-gray-600">{{ $post->genre }}</span>
-                            </td> --}}
-                            {{-- <td class="py-2 px-4">
-                                {{ $books->title }}
-                            </td> --}}
                             <td class="py-2">
                                 <div class="flex items-center">
                                     <span onclick="window.location.href='/show/{{ $post->title }}'" class="btn-watch btn-btn-watch">
