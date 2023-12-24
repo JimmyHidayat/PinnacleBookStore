@@ -30,10 +30,16 @@
     
         <option value="">Select category</option>
         <option value="1">Novel</option>
-        <option value="2">Sains</option>
+        <option value="2">Buku</option>
         <option value="3">Biografi</option>
         <option value="4">Komik</option>
         </select>
+    </div>
+    <div class="col-span-2 mb-4">
+        <div class="px-4 py-4 bg-white rounded-b-lg dark:bg-gray-800">
+                <textarea id="description" name="description" rows="8" class="block w-full px-0 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder=""> value="{{ old('description', $post->description) }}"
+                </textarea>
+        </div>
     </div>
     <div class="col-span-2">
         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="image">Edit Image</label>

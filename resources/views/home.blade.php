@@ -29,19 +29,23 @@
                     <div class="relative  h-56 overflow-hidden rounded-lg md:h-96">
                         <!-- Item 1 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="https://source.unsplash.com/1200x400?Books" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Books">
+                            <img src="https://source.unsplash.com/1200x400?Book" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Book">
                         </div>
                         <!-- Item 2 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="https://source.unsplash.com/1200x400?Books" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Books">
+                            <img src="https://source.unsplash.com/1200x400?Library" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Library">
                         </div>
                         <!-- Item 3 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="https://source.unsplash.com/1200x400?Books" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Books">
+                            <img src="https://source.unsplash.com/1200x400?Comic" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Comic">
                         </div>
                         <!-- Item 4 -->
                         <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                            <img src="https://source.unsplash.com/1200x400?Books" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Books">
+                            <img src="https://source.unsplash.com/1200x400?Novel" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Novel">
+                        </div>
+                        <!-- Item 5 -->
+                        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                            <img src="https://source.unsplash.com/1200x400?Coffe" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="Coffe">
                         </div>
                     </div>
                     <!-- Slider indicators -->
@@ -76,26 +80,26 @@
 
     {{-- Search --}}
             <section class="search">
-                <form>   
-                    <label for="default-search" class="mb-2 text-sm font-medium sr-only">Search</label>
+                <form action="/">   
+                    <label for="search" class="mb-2 text-sm font-medium sr-only">Search</label>
                     <div class="relative">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                             </svg>
                         </div>
-                        <input type="search" id="default-search" class="block w-full p-4 ps-10 text-sm rounded-lg" placeholder="Search....." required>
+                        <input type="text" id="search" name="search" class="block w-full p-4 ps-10 text-sm rounded-lg form-control" placeholder="Search.....">
                         <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
                     </div>
                 </form>   
             </section>
     {{-- Akhir Search --}}
 
-            <div class="mt-8 container mx-auto">
-                <div class="flex items-center justify-between">
-                    <h1 class="font-bold text-2xl ml-8">Rekomendasi Untukmu</h1>
-                    <a href="/categories" class="with-banner inline-block py-2 px-4 bg-[#736356] text-white rounded-md transition duration-300 ease-in-out hover:bg-[#a28160]">Lihat Semua</a>
-                </div>
+            <div class="mt-8 container mx-auto flex items-center justify-between">
+                <h1 class="font-bold text-2xl ml-8">Rekomendasi Untukmu</h1>
+                <a href="/categories" class="with-banner flex mr-7 py-2 px-4 bg-[#736356] text-white rounded-md transition duration-300 ease-in-out hover:bg-[#a28160]">
+                    Lihat Semua
+                </a>
             </div>
 
 
@@ -104,13 +108,29 @@
             <section class="mx-5 my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 home ml-6">
                 @foreach ($posts as $post)
                 <div class="w-full max-w-[125%] border border-black rounded-lg shadow">
-                    @if ($post->image)
+                    {{-- @if ($post->image) --}}
+                    {{-- {{ str_contains($post->image, 'https:') }} --}}
+                    @if (str_contains($post->image, 'https:')) 
+                    <div class="max-h-475px max-w-303px overflow-hidden">
+                        <img class="p-8 rounded-t-lg w-[100%]" src="{{ $post->image }}" alt="{{ $post->title }}" />
+                    </div>
+                    @else
+                    <div class="max-h-475px max-w-303px overflow-hidden">
+                        <img class="p-8 rounded-t-lg w-[100%]" src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" />
+                    </div>
+                    @endif
+                    {{-- @else
+                    <div class="max-h-475px max-w-303px overflow-hidden">
+                        <img class="p-8 rounded-t-lg w-[100%]" src="{{ $post->image }}" alt="{{ $post->title }}" />
+                    </div>
                     <div class="max-h-475px max-w-303px overflow-hidden">
                         <img class="p-8 rounded-t-lg w-[100%]" src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" />
                     </div>
                     @else
-                    <img class="p-8 rounded-t-lg w-[100%]" src="https://cdn.gramedia.com/uploads/items/9786020523316_Melangkah_UV_Spot_R4-1.jpg?{{ $post->title }}" alt="{{ $post->title }}" />
-                    @endif
+                    <div class="max-h-475px max-w-303px overflow-hidden">
+                        <img class="p-8 rounded-t-lg w-[100%]" src="{{ $post->image }}" alt="{{ $post->title }}" />
+                    </div>
+                    @endif --}}
                     <div class="px-5 pb-5">
                         <ul>
                             <li>
@@ -136,4 +156,8 @@
                 </div>
                 @endforeach
             </section>
+
+            <div class="flex justify-center">
+                {{ $posts->links() }}
+            </div>
 @endsection

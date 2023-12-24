@@ -85,7 +85,8 @@ class DashboardPostController extends Controller
             'genre' => 'required',
             'image' => 'image|file|max:10000',
             'category_id' => 'required',
-            'price' => 'required'
+            'price' => 'required',
+            'description' => 'required'
 
         ];
 
