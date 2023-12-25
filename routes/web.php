@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardPostController;
 use App\Models\Post;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CetakController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -100,3 +101,5 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 Route::post('/create', [PostController::class, 'store'])->name('create_post');
 Route::get('/dashboard/posts/{post:title}/edit', [DashboardPostController::class, 'edit']);
 Route::get('/show/{post:title}', [PostController::class, 'show'])->name('show_post');
+
+Route::get('/cetakBuku', [CetakController::class, 'cetakBuku'])->name('cetakBuku');

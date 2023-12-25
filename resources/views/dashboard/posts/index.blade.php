@@ -11,12 +11,13 @@
                 <div class="flex justify-between mb-4 items-start">
                     <div class="font-medium">My Post</div>
                     <div class="flex items-center">
-                        <div class="search">
+                        
+                        {{-- <div class="search">
                             <input type="text" class="search__input" placeholder="Search..." />
                             <div class="search__icon">
                                 <ion-icon name="search"></ion-icon>
                             </div>
-                        </div>
+                        </div> --}}
 
                 @if(session()->has('success'))
                     <div id="notification" class="w-full max-w-xs p-4 text-gray-900 bg-white rounded-lg shadow dark:bg-gray-800 dark:text-gray-300" role="alert">
@@ -32,7 +33,7 @@
                     {{ session('success') }}
                     </div>
                 @endif
-                        
+                            
 
         <!-- Modal toggle -->
         <button data-modal-target="crud-modal" data-modal-toggle="crud-modal" class="block text-black bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
@@ -219,6 +220,12 @@
                             @endforeach
                         </tbody>
                     </table>
+                    <a href="/cetakBuku" target="_blank">
+                        <h1 class="flex mt-8 justify-end font-medium text-black  border-black focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full  dark:hover:text-blue-500  dark:bg-gray-900 dark:focus:ring-blue-80"> Cetak PDF<svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 18a.969.969 0 0 0 .933 1h12.134A.97.97 0 0 0 15 18M1 7V5.828a2 2 0 0 1 .586-1.414l2.828-2.828A2 2 0 0 1 5.828 1h8.239A.97.97 0 0 1 15 2v5M6 1v4a1 1 0 0 1-1 1H1m0 9v-5h1.5a1.5 1.5 0 1 1 0 3H1m12 2v-5h2m-2 3h2m-8-3v5h1.375A1.626 1.626 0 0 0 10 13.375v-1.75A1.626 1.626 0 0 0 8.375 10H7Z"/>
+                          </svg>
+                        </h1>
+                    </a>
                 </div>
             </div>
         </div>
