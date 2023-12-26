@@ -123,7 +123,7 @@ class DatabaseSeeder extends Seeder
             'image' => 'https://cdn.gramedia.com/uploads/picture_meta/2023/10/31/egxmfc5jkllsmadjjcklw2.jpg'
         ]);
         Post::create([
-            'title' => 'Atomic Habits: Perubahan Kecil yang Memberikan Hasil Luar Biasa Edisi Hardcover',
+            'title' => 'Atomic Habits: Perubahan Kecil yang Memberikan Hasil Luar Biasa',
             'author' => 'James Clear',
             'category_id' => 2,
             'genre' => 'Pengembangan Diri',

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Post;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 
@@ -13,7 +14,17 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        if (request('category')) {
+            $category = Category::firstWhere('slug', request('category'));
+            // $title = ' in ' . $category->name;
+
+        }
+
+        return view('categories', [
+            "title" => "Post Categories",
+            "categories" => Category::all(),
+            'posts' => Post::latest()->filter(request(['category']))->paginate(25)->withQueryString()
+        ]);
     }
 
     /**
