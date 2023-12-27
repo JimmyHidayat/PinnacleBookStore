@@ -19,6 +19,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,400&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css"  rel="stylesheet" />
   <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="/js/app.js"></script>
+  
   {{-- <style>
     .self-center {
         font-family: 'Caveat', cursive;
@@ -35,5 +38,6 @@
 
         @include('partials.footer')
 
+        
     </body>
 </html>

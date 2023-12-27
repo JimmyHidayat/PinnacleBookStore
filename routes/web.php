@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\CategoryController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
@@ -9,6 +11,7 @@ use App\Http\Controllers\DashboardPostController;
 use App\Models\Post;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CetakController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -61,15 +64,18 @@ Route::get('/categories', function () {
     ]);
 });
 
-Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('categories', [
-        "title" => $category->name,
-        "posts" => $category->posts,
-        "category" => $category->name,
-        "categories" => Category::all(),
-        "posts" => Post::all()
-    ]);
-});
+// Route::get('/categories?category={category:slug}', function (Category $category) {
+//     return view('categories', [
+//         "title" => $category->name,
+//         "posts" => $category->posts,
+//         "category" => $category->name,
+//         "categories" => Category::all(),
+//         "posts" => Post::all()
+//     ]);
+// });
+
+Route::get('/categories', [CategoryController::class, 'index']);
+
 
 
 Route::get('/MyBooks', function () {
@@ -100,3 +106,9 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 Route::post('/create', [PostController::class, 'store'])->name('create_post');
 Route::get('/dashboard/posts/{post:title}/edit', [DashboardPostController::class, 'edit']);
 Route::get('/show/{post:title}', [PostController::class, 'show'])->name('show_post');
+
+Route::get('/cetakBuku', [CetakController::class, 'cetakBuku'])->name('cetakBuku');
+
+Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
+
+Route::post('/dashboard/categories', [AdminCategoryController::class, 'index'])->name('create_category');
