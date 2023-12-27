@@ -50,7 +50,7 @@ class GoogleAuthController extends Controller
 
             $checkUser = User::where('email', $google_user->getEmail())->first();
             if(!$checkUser) {
-                
+
                 $newUser = User::create([
                     'username' => $google_user->getName(),
                     'email' => $google_user->getEmail(),
@@ -67,7 +67,7 @@ class GoogleAuthController extends Controller
                 Auth::login($checkUser);
 
                 return redirect()->intended('dashboard');
-                
+
             }
 
         } catch (\Exception $e) {
