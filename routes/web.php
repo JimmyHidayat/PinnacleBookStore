@@ -112,3 +112,10 @@ Route::get('/cetakBuku', [CetakController::class, 'cetakBuku'])->name('cetakBuku
 Route::resource('/dashboard/categories', AdminCategoryController::class)->except('show')->middleware('admin');
 
 Route::post('/dashboard/categories', [AdminCategoryController::class, 'index'])->name('create_category');
+
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/privacy', function () {
+    return view('privacy');
+});
