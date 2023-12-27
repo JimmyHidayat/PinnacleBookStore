@@ -46,9 +46,10 @@ class GoogleAuthController extends Controller
 
             // $google_user = Socialite::driver('google')->stateless()->user();
 
-            $user = User::where('google_id', $google_user->getId())->first();
+            // $user = User::where('google_id', $google_user->getId())->first();
 
-            if(!$user) {
+            $checkUser = User::where('email', $google_user->getEmail())->first();
+            if(!$checkUser) {
 
                 $newUser = User::create([
                     'username' => $google_user->getName(),
@@ -63,7 +64,7 @@ class GoogleAuthController extends Controller
 
             } else {
 
-                Auth::login($user);
+                Auth::login($checkUser);
 
                 return redirect()->intended('dashboard');
 
