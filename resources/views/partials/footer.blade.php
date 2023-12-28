@@ -9,9 +9,9 @@
                 <li>
                     <a href="/privacy" class="hover:underline me-4 md:me-6 hover:text-[#D9AE84]">Privacy Policy</a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href="#" class="hover:underline me-4 md:me-6 hover:text-[#D9AE84]">Licensing</a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="/contact" class="hover:underline hover:text-[#D9AE84]">Contact</a>
                 </li>
