@@ -79,7 +79,9 @@ Route::get('/categories', [CategoryController::class, 'index']);
 
 
 Route::get('/MyBooks', function () {
-    return view('MyBooks');
+    return view('MyBooks',[
+        "title" => "MyBooks"
+    ]);
 });
 
 Route::get('/dashboard', function() {
@@ -106,6 +108,7 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 Route::post('/create', [PostController::class, 'store'])->name('create_post');
 Route::get('/dashboard/posts/{post:title}/edit', [DashboardPostController::class, 'edit']);
 Route::get('/show/{post:title}', [PostController::class, 'show'])->name('show_post');
+// Route::get('/MyBooks/{post:title}', [PostController::class, 'show'])->name('show_post');
 
 Route::get('/cetakBuku', [CetakController::class, 'cetakBuku'])->name('cetakBuku');
 

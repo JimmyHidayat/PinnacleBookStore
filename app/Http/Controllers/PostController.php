@@ -78,6 +78,10 @@ class PostController extends Controller
             "title" => "Single Post",
             "post" => $post
         ]);
+        // return view('MyBooks', [
+        //     "title" => "Single Post",
+        //     "post" => $post
+        // ]);
         // return $post;
     }
 

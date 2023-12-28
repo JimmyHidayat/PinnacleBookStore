@@ -89,7 +89,7 @@
                             </svg>
                         </div>
                         <input type="text" id="search" name="search" class="block w-full p-4 ps-10 text-sm rounded-lg form-control" placeholder="Search.....">
-                        <button type="submit" class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                        <button type="submit" class="text-black absolute end-2.5 bottom-2.5 bg-[#FFCCAC] hover:bg-[#FFCCAC] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-[#FFCCAC] dark:hover:bg-[#FFCCAC] dark:focus:ring-[#FFCCAC] hover:text-white">Search</button>
                     </div>
                 </form>   
             </section>
@@ -97,7 +97,7 @@
 
             <div class="mt-8 container mx-auto flex items-center justify-between">
                 <h1 class="font-bold text-2xl ml-8">Rekomendasi Untukmu</h1>
-                <a href="/categories" class="with-banner flex mr-7 py-2 px-4 bg-[#736356] text-white rounded-md transition duration-300 ease-in-out hover:bg-[#a28160]">
+                <a href="/categories" class="with-banner flex mr-7 py-2 px-4 bg-[#FFCCAC] text-black rounded-md hover:text-white">
                     Lihat Semua
                 </a>
             </div>
