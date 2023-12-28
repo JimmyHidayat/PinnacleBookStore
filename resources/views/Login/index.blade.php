@@ -35,8 +35,8 @@
 
 
 
-    <div class="w-full mt-8 h-auto max-w-sm mx-auto p-3 bg-[#D9AE84] border border-[#D9AE84] rounded-lg shadow sm:p-2 md:p-4 transform translate-y-20">
-        
+    <div class="w-full mt-8 h-auto max-w-sm mx-auto p-3 bg-[#FFCCAC] border border-[#C1E1DC] rounded-lg shadow sm:p-2 md:p-4 transform translate-y-20">
+
     @if(session()->has('success'))
     <div id="notification" class="w-full max-w-xs p-4 text-gray-900 bg-white rounded-lg shadow dark:bg-gray-800 dark:text-gray-300" role="alert">
         <div class="flex items-center mb-3">
@@ -50,7 +50,7 @@
         </div>
 
         {{ session('success') }}
-        
+
     </div>
     @endif
 
@@ -67,40 +67,40 @@
         </div>
 
         {{ session('loginError') }}
-        
+
     </div>
     @endif
 
 
           <form class="space-y-6" action="/login" method="POST">
             @csrf
-              <h5 class="mb-5 text-center text-[35px] font-medium text-gray-600">Login</h5>
+              <h5 class="mb-5 text-center text-[35px] font-medium text-black">Login</h5>
               <div>
-                  <label for="email" class="block mb-5 text-sm font-medium text-gray-600">Your email</label>
-                  <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror mb-5 bg-[#D9AE84] border border-yellow-900 text-[#736356] text-sm rounded-lg focus:border-[#D9AE84] block w-full p-2.5 placeholder-yellow-800" placeholder="example@gmail.com" autofocus value="{{ old('email') }}">
+                  <label for="email" class="block mb-5 text-sm font-medium text-[#469185]">Your email</label>
+                  <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror mb-5 bg-white border border-[#C1E1DC] text-[#736356] text-sm rounded-lg focus:border-white block w-full p-2.5 placeholder-[#dc976b]" placeholder="example@gmail.com" autofocus value="{{ old('email') }}">
 
-                   
+
               </div>
               <div>
-                  <label for="password" class="block mb-5 text-sm font-medium text-gray-600">Your password</label>
-                  <input type="password" name="password" id="password" placeholder="*****" class="mb-5 bg-[#D9AE84] border border-yellow-900 text-[#736356] text-sm rounded-lg focus:ring-[#D9AE84] focus:border-[#D9AE84] block w-full p-2.5 placeholder-yellow-800">
+                  <label for="password" class="block mb-5 text-sm font-medium text-[#469185]">Your password</label>
+                  <input type="password" name="password" id="password" placeholder="*****" class="mb-5 bg-white border border-[#C1E1DC] text-[#736356] text-sm rounded-lg focus:border-white block w-full p-2.5 placeholder-[#dc976b]">
               </div>
-              <div class="flex items-start">
+              {{-- <div class="flex items-start">
                   <div class="flex items-start mb-5">
                       <div class="flex items-center h-5">
-                          <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-[#736356] rounded bg-[#736356] focus:ring-white focus:ring-offset-white">
+                          <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-[#2d5d55] rounded bg-black focus:ring-white focus:ring-offset-white">
                       </div>
-                      <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-600">Remember me</label>
+                      <label for="remember" class="ms-2 text-sm font-medium text-[#469185]">Remember me</label>
                   </div>
-                  <a href="#" class="ms-auto text-sm font-bold  hover:underline hover:text-blue-500 dark:text-black">Forgot Password?</a>
-              </div>
-              <button type="submit" class="mb-5 w-full text-white hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-opacity-90 bg-[#736356]">Login to your account</button>
-              <div class="text-sm font-medium text-gray-500 dark:text-gray-600 text-capasity-30 mb-5">
-                  Not registered? <a href="/register" class="hover:underline hover:text-blue-500 dark:text-black">Create account</a>
+                  <a href="#" class="ms-auto text-sm font-bold  hover:underline hover:text-blue-500 text-black">Forgot Password?</a>
+              </div> --}}
+              <button type="submit" class="w-full text-[#2d5d55] hover:text-black bg-[#C1E1DC] hover:bg-[#ddeeec] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">Login to your account</button>
+              <div class="text-sm font-medium text-[#469185] text-capasity-30 mb-5">
+                  Not registered? <a href="/register" class="hover:underline hover:text-blue-500 text-black">Create account</a>
               </div>
               <div class="flex flex-wrap items-center justify-center">
-                <a  class="px-32 text-center text-sm font-medium text-gray-600 mb-5">-Or Continue-</a>
-                <a href="{{ route('google-auth') }}" class="flex items-center text-white hover:text-black bg-[#736356] hover:bg-[#EFDECE] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">
+                <a  class="px-32 text-center text-sm font-medium text-[#469185] mb-5">-Or Continue-</a>
+                <a href="{{ route('google-auth') }}" class="flex items-center text-[#2d5d55] hover:text-black bg-[#C1E1DC] hover:bg-[#ddeeec] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">
                     <img
                         src="img/google.png"
                         alt=""

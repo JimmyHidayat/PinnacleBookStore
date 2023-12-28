@@ -33,7 +33,7 @@
 
         @include('partials.navbar')
 
-        <div class="w-full mt-8 h-auto max-w-sm mx-auto p-3 bg-[#D9AE84] border border-[#D9AE84] rounded-lg shadow sm:p-2 md:p-4  transform translate-y-20">
+        <div class="w-full mt-8 h-auto max-w-sm mx-auto p-3 bg-[#FFCCAC] border border-[#C1E1DC] rounded-lg shadow sm:p-2 md:p-4  transform translate-y-20">
             <form action="/register" method="POST" class="max-w-md mx-auto">
                 @if(session()->has('success'))
                     <div id="notification" class="w-full max-w-xs p-4 text-gray-900 bg-white rounded-lg shadow dark:bg-gray-800 dark:text-gray-300" role="alert">
@@ -48,26 +48,26 @@
                     </div>
 
                  {{ session('success') }}
-        
+
                     </div>
                 @endif
                 @csrf
-            <h5 class="text-center text-[35px] font-medium text-gray-600 pb-5 ">Register</h5>
+            <h5 class="text-center text-[35px] font-medium text-black pb-5 ">Register</h5>
             <div class="relative z-0 w-full mb-5 group">
-                <input type="text" name="username" id="username" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-[#736356] dark:border-gray-600 dark:focus:border-[#736356] focus:outline-none focus:ring-0 focus:border-[#736356] peer" placeholder=" " @error('username') is-invalid @enderror value="{{ old('username') }}" />
-                <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#736356] peer-focus:dark:text-[#736356] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Username</label>
+                <input type="text" name="username" id="username" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-[#3d7f75] appearance-none text-[#469185]  focus:outline-none focus:ring-0 focus:border-[#61b3a6] peer" placeholder=" " @error('username') is-invalid @enderror value="{{ old('username') }}" />
+                <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-[#6bb8ac] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#61b3a6] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Username</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
-                <input type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm  bg-transparent border-0 border-b-2  appearance-none text-[#736356] border-gray-600 focus:outline-none focus:ring-0 focus:border-[#736356] peer" placeholder=" " @error('email') is-invalid @enderror value="{{ old('username') }}" />
-                <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-[#736356] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
+                <input type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-[#3d7f75] appearance-none text-[#61b3a6]  focus:outline-none focus:ring-0 focus:border-[#61b3a6] peer" placeholder=" " @error('email') is-invalid @enderror value="{{ old('username') }}" />
+                <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-[#6bb8ac] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#61b3a6] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
-                <input type="password" name="password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-600 appearance-none text-[#736356]  focus:outline-none focus:ring-0 focus:border-[#736356] peer" placeholder=" " @error('password') is-invalid @enderror/>
-                <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#736356] peer-focus:dark:text-[#736356] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
+                <input type="password" name="password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-[#3d7f75] appearance-none text-[#61b3a6]  focus:outline-none focus:ring-0 focus:border-[#61b3a6] peer" placeholder=" " @error('password') is-invalid @enderror/>
+                <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-[#6bb8ac] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#61b3a6] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
-                <input type="password" name="confirmPassword" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-gray-600 appearance-none text-[#736356]  focus:outline-none focus:ring-0 focus:border-[#736356] peer" placeholder=" " @error('confirmPassword') is-invalid @enderror />
-                <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#736356] peer-focus:dark:text-[#736356] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
+                <input type="password" name="confirmPassword" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-[#3d7f75] appearance-none text-[#61b3a6]  focus:outline-none focus:ring-0 focus:border-[#61b3a6] peer" placeholder=" " @error('confirmPassword') is-invalid @enderror />
+                <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-[#6bb8ac] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#61b3a6] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
             </div>
             {{-- <div class="grid md:grid-cols-2 md:gap-6">
                 <div class="relative z-0 w-full mb-5 group">
@@ -86,16 +86,16 @@
                 <label for="terms" class="ms-2 text-sm font-medium text-gray-500">I agree with the <a href="#" class="hover:underline hover:text-blue-500 dark:text-black">terms and conditions</a></label>
             </div> --}}
 
-                <button type="submit" class="w-full text-white hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-opacity-90  bg-[#736356] mb-4">
+                <button type="submit" class="w-full text-[#2d5d55] hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-[#ddeeec]  bg-[#C1E1DC] mb-4">
                     Register
                 </button>
 
-                <div class="text-sm font-medium text-gray-500 dark:text-gray-600 text-capasity-30">
-                    Already registered? <a href="/login" class="hover:underline hover:text-blue-500 dark:text-black">Login</a>
+                <div class="text-sm font-medium text-[#469185] text-capasity-30">
+                    Already registered? <a href="/login" class="hover:underline hover:text-blue-500 text-black">Login</a>
                 </div>
                 <div class="flex flex-wrap items-center justify-center mt-4">
-                    <a  class="px-32 text-center text-sm font-medium text-gray-600 mb-5">-Or Continue-</a>
-                    <a href="{{ route('google-auth') }}" class="flex items-center text-white hover:text-black bg-[#736356] hover:bg-[#EFDECE] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">
+                    <a  class="px-32 text-center text-sm font-medium text-[#469185] mb-5">-Or Continue-</a>
+                    <a href="{{ route('google-auth') }}" class="flex items-center text-[#2d5d55] hover:text-black bg-[#C1E1DC] hover:bg-[#ddeeec] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">
                     {{-- <button onclick="window.location.href=''" type="submit" class="flex items-center text-white hover:text-black bg-[#736356] hover:bg-[#EFDECE] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]"> --}}
                         <img
                             src="img/google.png"
