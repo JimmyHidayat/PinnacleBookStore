@@ -71,6 +71,9 @@
             <a href="/" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0 hover:text-[#D9AE84]">Home</a>
           </li>
           <li>
+            <a href="/about" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84]">About</a>
+          </li>
+          <li>
             <a href="/MyBooks" class="block py-2 px-3 text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-[#D9AE84]">MyBooks</a>
           </li>
           <li>

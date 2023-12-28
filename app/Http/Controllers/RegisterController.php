@@ -35,7 +35,7 @@ class RegisterController extends Controller
        
         return redirect('/login')->with('success', 'Registration Successfull! Please Login!');
         
-        return redirect('/register')->with('failed', 'Passwords must be the same');
+        // return redirect('/register')->with('failed', 'Passwords must be the same');
        
         
         

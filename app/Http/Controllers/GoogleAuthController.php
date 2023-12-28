@@ -24,7 +24,8 @@ class GoogleAuthController extends Controller
         $validateData = $request->validate([
             'name' => 'required|min:3|max:255',
             'email' => 'required|email:dns|unique:users',
-            'password' => 'required|min:5|max:255'
+            'password' => 'required|min:5|max:255',
+            'confirmPassword' => 'required|same:password'
         ]);
 
         $validateData['google_id'] = $request['google_id'];
@@ -36,43 +37,59 @@ class GoogleAuthController extends Controller
 
         User::create($validateData);
 
-        return redirect('/login')->with('success', 'Register Success!');
+        return redirect('/login')->with('success', 'Register Success with Google!');
     }
 
 
     public function callbackGoogle() {
-        try{
-            $google_user = Socialite::driver('google')->user();
-
+        // try{
             // $google_user = Socialite::driver('google')->stateless()->user();
+            // $checkUser = User::where('email', $google_user->getEmail())->first();
 
-            // $user = User::where('google_id', $google_user->getId())->first();
+                // $newUser = User::create([
+                //     'username' => $google_user->getName(),
+                //     'email' => $google_user->getEmail(),
+                //     'google_id'=> $google_user->getId(),
+                //     'password' => encrypt('123456dummy')
+                // ]);
 
-            $checkUser = User::where('email', $google_user->getEmail())->first();
-            if(!$checkUser) {
+                // Auth::login($newUser);
+
+                // return redirect()->intended('dashboard');
+
+                $google_user = Socialite::driver('google')->user();
+                $findUser = User::where('google_id', $google_user->getId())->first();
+            
+
+            if($findUser) {
+                Auth::login($findUser);
+                return redirect()->intended('dashboard');
+
+            } else {
 
                 $newUser = User::create([
                     'username' => $google_user->getName(),
                     'email' => $google_user->getEmail(),
                     'google_id'=> $google_user->getId(),
-                    'password' => encrypt('123456dummy')
+                    'password' => bcrypt('123456')
                 ]);
 
                 Auth::login($newUser);
-
                 return redirect()->intended('dashboard');
 
-            } else {
+                // Auth::login($newUser);
 
-                Auth::login($checkUser);
+                // return redirect()->intended('dashboard');
 
-                return redirect()->intended('dashboard');
+                // Auth::login($checkUser);
+
+                // return redirect()->intended('dashboard');
 
             }
 
-        } catch (\Exception $e) {
-            return redirect('/login');
-            // dd($e->getMessage());
-        }
+        // } catch (\Exception $e) {
+        //     return redirect('/login');
+        //     dd($e->getMessage());
+        // }
     }
 }
