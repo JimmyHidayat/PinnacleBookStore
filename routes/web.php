@@ -119,3 +119,7 @@ Route::get('/about', function () {
 Route::get('/privacy', function () {
     return view('privacy');
 });
+
+Route::get('/contact', function () {
+    return view('contact');
+});
