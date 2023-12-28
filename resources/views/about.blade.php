@@ -18,7 +18,7 @@
         <p class="text-xs">Butuh penjelasan untuk berbagai fitur di PinnacleBookStore? Cari tahu disini</p>
     </div>
 
-    <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-[#d2cac9] text-[#584f49]" data-inactive-classes="text-[#584f49]">
+    <div id="accordion-flush" data-accordion="collapse" data-active-classes="bg-[#FFCCAC] text-[#584f49]" data-inactive-classes="text-[#584f49]">
         <h2 id="accordion-flush-heading-1">
           <button type="button" class="flex items-center justify-between w-full py-5 font-medium rtl:text-right text-[#584f49] border-b border-gray-700 gap-3" data-accordion-target="#accordion-flush-body-1" aria-expanded="true" aria-controls="accordion-flush-body-1">
             <span class="px-5">About PinnacleBookStore</span>
