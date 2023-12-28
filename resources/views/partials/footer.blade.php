@@ -13,7 +13,7 @@
                     <a href="#" class="hover:underline me-4 md:me-6 hover:text-[#D9AE84]">Licensing</a>
                 </li>
                 <li>
-                    <a href="#" class="hover:underline hover:text-[#D9AE84]">Contact</a>
+                    <a href="/contact" class="hover:underline hover:text-[#D9AE84]">Contact</a>
                 </li>
             </ul>
         </div>
