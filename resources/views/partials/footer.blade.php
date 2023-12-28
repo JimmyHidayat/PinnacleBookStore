@@ -7,10 +7,7 @@
             </a>
             <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-white sm:mb-0">
                 <li>
-                    <a href="#" class="hover:underline me-4 md:me-6 hover:text-[#D9AE84]">About</a>
-                </li>
-                <li>
-                    <a href="#" class="hover:underline me-4 md:me-6 hover:text-[#D9AE84]">Privacy Policy</a>
+                    <a href="/privacy" class="hover:underline me-4 md:me-6 hover:text-[#D9AE84]">Privacy Policy</a>
                 </li>
                 <li>
                     <a href="#" class="hover:underline me-4 md:me-6 hover:text-[#D9AE84]">Licensing</a>

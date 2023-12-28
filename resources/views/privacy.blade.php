@@ -13,11 +13,11 @@
     <div class="carousel-item">
       <img src="https://source.unsplash.com/1200x400?Novel" alt="Novel" />
     </div>
-    </div>
+</div>
 
     <div class="text-gray-600 text-3xl mb-8 text-center ">
         <p>Privacy Policy</p>
-        <p class="text-xs">Kebijakan Privasi dan Syarat Penggunaan di PinnacleBookStore</p>
+        <p class="text-xs mt-2">Kebijakan Privasi dan Syarat Penggunaan di PinnacleBookStore</p>
     </div><br>
                     <div class="px-5">
                     <h4 class="font-bold text-[#584f49]"> 1. Kebijakan Privasi: </h4>

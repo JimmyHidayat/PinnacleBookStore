@@ -2,13 +2,13 @@
 
 @section('container')
 <div class="carousel carousel-end rounded-box flex justify-center mb-8 py-8">
-    <div class="carousel-item">
+    <div class="carousel-item relative h-100 mx-2 my-200">
       <img src="https://source.unsplash.com/1200x400?Library" alt="Library" />
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item relative h-100 mx-2 my-200">
       <img src="https://source.unsplash.com/1200x400?Book" alt="Book" />
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item relative h-100 mx-2 my-200">
       <img src="https://source.unsplash.com/1200x400?Novel" alt="Novel" />
     </div>
     </div>

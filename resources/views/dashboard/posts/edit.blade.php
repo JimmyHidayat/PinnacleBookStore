@@ -37,7 +37,7 @@
     </div>
     <div class="col-span-2 mb-4">
         <div class="px-4 py-4 bg-white rounded-b-lg dark:bg-gray-800">
-                <textarea id="description" name="description" rows="8" class="block w-full px-0 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder=""> value="{{ old('description', $post->description) }}"
+                <textarea id="description" name="description" rows="8" class="block w-full px-0 text-sm text-gray-800 bg-white border-0 dark:bg-gray-800 focus:ring-0 dark:text-white dark:placeholder-gray-400" placeholder="">{{ old('description', $post->description) }}
                 </textarea>
         </div>
     </div>
