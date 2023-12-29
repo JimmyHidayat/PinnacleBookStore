@@ -8,7 +8,7 @@
 <div class="text-center w-full">
   <h1 class="text-3xl lg:text-5xl">Contact Form</h1>
 </div>
-<div class="contact mt-24 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
+<div class="contact mt-24 px-8 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-[#FFCCAC] text-gray-900 rounded-lg shadow-lg">
   <div class="flex flex-col justify-between">
     <div>
       <h2 class="text-4xl lg:text-5xl font-bold leading-tight">Lets talk about everything!</h2>
@@ -29,24 +29,24 @@
       </div>
     </div>
     <div>
-      <span class="uppercase text-sm text-gray-600 font-bold">Full Name</span>
-      <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+      <span class="uppercase text-sm text-[#469185] font-bold">Full Name</span>
+      <input class="w-full bg-white text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
         type="text" placeholder="" name="nama">
     </div>
     <div class="mt-8">
-      <span class="uppercase text-sm text-gray-600 font-bold">Email</span>
-      <input class="w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+      <span class="uppercase text-sm text-[#469185] font-bold">Email</span>
+      <input class="w-full bg-white text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
         type="text" name="email">
     </div>
     <div class="mt-8">
-      <span class="uppercase text-sm text-gray-600 font-bold">Message</span>
+      <span class="uppercase text-sm text-[#469185] font-bold">Message</span>
       <textarea
-        class="w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" name="pesan">
+        class="w-full h-32 bg-white text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" name="pesan">
       </textarea>
     </div>
     <div class="mt-8">
       <button
-        type="submit" class="btn-kirim uppercase text-sm font-bold tracking-wide bg-[#675d5d] text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
+        type="submit" class="btn-kirim uppercase text-sm font-bold tracking-wide bg-[#C1E1DC] text-black p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
         Send Message
       </button>
     </div>
