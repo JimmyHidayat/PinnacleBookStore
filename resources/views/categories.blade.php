@@ -3,20 +3,20 @@
         @section('container')
         
         @include('partials.navbar')
-
+{{--  bg-[#FFCCAC] text-[#584f49]  --}}
         <div class="container justify-center flex pt-8">
             <div class="row">
                 <div class="col-span-2">
                     @foreach ($categories as $category)
                         @if($category->id == 1)
-                            <a href="/categories?category={{ $category->slug }}" class="justify-center text-white hover:text-white border border-black bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:hover:text-blue-500  dark:bg-gray-900 dark:focus:ring-blue-80 ">{{ $category->name }}</a>
+                            <a href="/categories?category={{ $category->slug }}" class="justify-center text-black hover:text-white border border-black bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:hover:text-[#C1E1DC]   dark:focus:ring-blue-80 ">{{ $category->name }}</a>
                         @elseif($category->id == 2)
-                            <a href="/categories?category={{ $category->slug }}" class="justify-center text-white hover:text-white border border-black bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:hover:text-blue-500  dark:bg-gray-900 dark:focus:ring-blue-80">{{ $category->name }}</a>
+                            <a href="/categories?category={{ $category->slug }}" class="justify-center text-black hover:text-white border border-black bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:hover:text-[#C1E1DC] dark:focus:ring-blue-80">{{ $category->name }}</a>
                         @elseif($category->id == 3)
-                            <a href="/categories?category={{ $category->slug }}" class="justify-center text-white hover:text-white border border-black bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:hover:text-blue-500  dark:bg-gray-900 dark:focus:ring-blue-80">{{ $category->name }}</a>
+                            <a href="/categories?category={{ $category->slug }}" class="justify-center text-black hover:text-white border border-black bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:hover:text-[#C1E1DC] dark:focus:ring-blue-80">{{ $category->name }}</a>
                         @elseif($category->id == 4)
-                            <a href="/categories?category={{ $category->slug }}" class="justify-center text-white hover:text-white border border-black bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:hover:text-blue-500  dark:bg-gray-900 dark:focus:ring-blue-80">{{ $category->name }}</a>
-                            <a href="/categories" class="justify-center text-white hover:text-white border border-black bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:hover:text-blue-500  dark:bg-gray-900 dark:focus:ring-blue-80">Back To All Posts</a>
+                            <a href="/categories?category={{ $category->slug }}" class="justify-center text-black hover:text-white border border-black bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:hover:text-[#C1E1DC] dark:focus:ring-blue-80">{{ $category->name }}</a>
+                            <a href="/categories" class="justify-center text-black hover:text-white border border-black bg-white focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:hover:text-[#C1E1DC]  dark:focus:ring-blue-80">Back To All Posts</a>
                         @endif        
                     @endforeach
                 </div>
