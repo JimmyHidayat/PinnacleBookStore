@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\orders;
 use App\Http\Requests\StoreordersRequest;
 use App\Http\Requests\UpdateordersRequest;
+use Illuminate\Http\Request;
 
 class OrdersController extends Controller
 {
@@ -15,6 +16,12 @@ class OrdersController extends Controller
     {
         //
     }
+
+    // public function handlePlaceOrder(Request $request)
+    // {
+    //     // Logika untuk menangani pesanan
+    //     return response()->json(['message' => 'Order placed successfully']);
+    // }
 
     /**
      * Show the form for creating a new resource.

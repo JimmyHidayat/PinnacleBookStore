@@ -39,6 +39,8 @@ class PostController extends Controller
         //
     }
 
+    
+
     /**
      * Store a newly created resource in storage.
      */
@@ -72,17 +74,20 @@ class PostController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    // public function show(Post $post)
+    // {
+    //     return view('dashboard.posts.show', [
+    //         "title" => "Single Post",
+    //         "post" => $post
+    //     ]);
+    // }
+
+    public function showHome(Post $post)
     {
-        return view('dashboard.posts.show', [
+        return view('showInUser', [
             "title" => "Single Post",
             "post" => $post
         ]);
-        // return view('MyBooks', [
-        //     "title" => "Single Post",
-        //     "post" => $post
-        // ]);
-        // return $post;
     }
 
     /**

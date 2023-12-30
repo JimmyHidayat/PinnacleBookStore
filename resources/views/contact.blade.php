@@ -29,24 +29,24 @@
       </div>
     </div>
     <div>
-      <span class="uppercase text-sm text-[#469185] font-bold">Full Name</span>
+      <span class="uppercase text-sm text-black font-bold">Full Name</span>
       <input class="w-full bg-white text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
         type="text" placeholder="" name="nama">
     </div>
     <div class="mt-8">
-      <span class="uppercase text-sm text-[#469185] font-bold">Email</span>
+      <span class="uppercase text-sm text-black font-bold">Email</span>
       <input class="w-full bg-white text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
         type="text" name="email">
     </div>
     <div class="mt-8">
-      <span class="uppercase text-sm text-[#469185] font-bold">Message</span>
+      <span class="uppercase text-sm text-black font-bold">Message</span>
       <textarea
         class="w-full h-32 bg-white text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" name="pesan">
       </textarea>
     </div>
     <div class="mt-8">
       <button
-        type="submit" class="btn-kirim uppercase text-sm font-bold tracking-wide bg-[#C1E1DC] text-black p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
+        type="submit" class="btn-kirim uppercase text-sm font-bold tracking-wide bg-[#C1E1DC] text-black hover:text-white border border-[#C1E1DC] p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
         Send Message
       </button>
     </div>

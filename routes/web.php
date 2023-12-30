@@ -12,6 +12,7 @@ use App\Models\Post;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CetakController;
+use App\Http\Controllers\OrdersController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -107,7 +108,8 @@ Route::resource('/dashboard/posts', DashboardPostController::class)->middleware(
 
 Route::post('/create', [PostController::class, 'store'])->name('create_post');
 Route::get('/dashboard/posts/{post:title}/edit', [DashboardPostController::class, 'edit']);
-Route::get('/show/{post:title}', [PostController::class, 'show'])->name('show_post');
+// Route::get('/show/{post:title}', [PostController::class, 'show'])->name('show_post');
+Route::get('/showHome/{post:title}', [PostController::class, 'showHome'])->name('show_postInHome');
 // Route::get('/MyBooks/{post:title}', [PostController::class, 'show'])->name('show_post');
 
 Route::get('/cetakBuku', [CetakController::class, 'cetakBuku'])->name('cetakBuku');
@@ -126,3 +128,19 @@ Route::get('/privacy', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
+
+// Route::get('/placeOrder', function () {
+//     return view('php/placeOrder');
+// });
+
+// routes/web.php atau routes/api.php
+
+// Route::post('/placeOrder', [OrdersController::class, 'placeOrder']);
+
+// routes/web.php
+
+// Route::post('/placeOrder', 'OrdersController@handlePlaceOrder');
+
+
+Route::get('search', [Post::class, 'search']);
+Route::get('searchResult', [Post::class, 'searchResult']);

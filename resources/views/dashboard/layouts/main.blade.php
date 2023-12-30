@@ -23,6 +23,12 @@
 
             <link rel="stylesheet" href="/css/style2.css" />
 
+            <style>
+              body {
+                font-family: "Poppins", sans-serif;
+                background-color: #ffffff;
+              }
+            </style>
 
 
 
@@ -33,21 +39,20 @@
 
     {{-- Header --}}
 
-    @include('dashboard.layouts.header')
+    
     {{-- @extends('dashboard/layouts/header') --}}
 
     {{-- Akhir Header --}}
         <div class="container mt-40">
             <div class="row">
-
+                    @include('dashboard.layouts.header')
                     @include('dashboard.layouts.sidebar')
 
-                <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-gray-50 min-h-screen transition-all main">
+                <main class="w-full md:w-[calc(100%-256px)] md:ml-64 bg-white min-h-screen transition-all main">
                     @yield('container')
                 </main>
             </div>
         </div>
-    </main>
     <!-- end: Main -->
 
 
