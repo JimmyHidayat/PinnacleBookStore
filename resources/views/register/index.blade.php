@@ -86,7 +86,7 @@
                 <label for="terms" class="ms-2 text-sm font-medium text-gray-500">I agree with the <a href="#" class="hover:underline hover:text-blue-500 dark:text-black">terms and conditions</a></label>
             </div> --}}
 
-                <button type="submit" class="w-full text-[#2d5d55] hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-[#ddeeec]  bg-[#C1E1DC] mb-4">
+                <button type="submit" class="w-full text-black hover:text-black focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center hover:bg-[#ddeeec]  bg-[#C1E1DC] mb-4">
                     Register
                 </button>
 
@@ -95,7 +95,7 @@
                 </div>
                 <div class="flex flex-wrap items-center justify-center mt-4">
                     <a  class="px-32 text-center text-sm font-medium text-[#469185] mb-5">-Or Continue-</a>
-                    <a href="{{ route('google-auth') }}" class="flex items-center text-[#2d5d55] hover:text-black bg-[#C1E1DC] hover:bg-[#ddeeec] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">
+                    <a href="{{ route('google-auth') }}" class="flex items-center text-black hover:text-black bg-[#C1E1DC] hover:bg-[#ddeeec] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">
                     {{-- <button onclick="window.location.href=''" type="submit" class="flex items-center text-white hover:text-black bg-[#736356] hover:bg-[#EFDECE] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]"> --}}
                         <img
                             src="img/google.png"

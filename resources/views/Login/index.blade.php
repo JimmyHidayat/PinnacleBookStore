@@ -94,13 +94,13 @@
                   </div>
                   <a href="#" class="ms-auto text-sm font-bold  hover:underline hover:text-blue-500 text-black">Forgot Password?</a>
               </div> --}}
-              <button type="submit" class="w-full text-[#2d5d55] hover:text-black bg-[#C1E1DC] hover:bg-[#ddeeec] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">Login to your account</button>
+              <button type="submit" class="w-full text-black hover:text-black bg-[#C1E1DC] hover:bg-[#ddeeec] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">Login to your account</button>
               <div class="text-sm font-medium text-[#469185] text-capasity-30 mb-5">
                   Not registered? <a href="/register" class="hover:underline hover:text-blue-500 text-black">Create account</a>
               </div>
               <div class="flex flex-wrap items-center justify-center">
                 <a  class="px-32 text-center text-sm font-medium text-[#469185] mb-5">-Or Continue-</a>
-                <a href="{{ route('google-auth') }}" class="flex items-center text-[#2d5d55] hover:text-black bg-[#C1E1DC] hover:bg-[#ddeeec] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">
+                <a href="{{ route('google-auth') }}" class="flex items-center text-black hover:text-black bg-[#C1E1DC] hover:bg-[#ddeeec] focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center focus:ring-[#736356]">
                     <img
                         src="img/google.png"
                         alt=""

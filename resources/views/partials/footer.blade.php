@@ -7,11 +7,11 @@
             </a>
             <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-black sm:mb-0">
                 <li>
+                    <a href="/about" class="hover:underline me-4 md:me-6 hover:text-[#D9AE84]">About</a>
+                </li>
+                <li>
                     <a href="/privacy" class="hover:underline me-4 md:me-6 hover:text-white">Privacy Policy</a>
                 </li>
-                {{-- <li>
-                    <a href="#" class="hover:underline me-4 md:me-6 hover:text-[#D9AE84]">Licensing</a>
-                </li> --}}
                 <li>
                     <a href="/contact" class="hover:underline hover:text-white">Contact</a>
                 </li>

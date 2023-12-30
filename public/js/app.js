@@ -5,85 +5,161 @@ document.addEventListener("alpine:init", () => {
                 id: 1,
                 author: "J.S Khairen",
                 name: "Melangkah",
-                image: "https://cdn.gramedia.com/uploads/items/9786020523316_Melangkah_UV_Spot_R4-1.jpg",
+                image: "1.jpg",
                 category: "Biografi",
                 price: 65000,
             },
             {
                 id: 2,
-                author: "Leila S. Chudori",
-                name: "Laut Bercerita",
-                image: "https://cdn.gramedia.com/uploads/items/9786024246945_Laut-Bercerita.png",
-                category: "Novel",
-                price: 84000,
-            },
-            {
-                id: 3,
                 author: "Gege Akutami",
                 name: "Jujutsu Kaisen 12",
-                image: "https://cdn.gramedia.com/uploads/picture_meta/2023/11/17/efri6damk2qz3tuvwn4car.jpg",
+                image: "2.jpg",
                 category: "Komik",
                 price: 55000,
             },
             {
-                id: 4,
+                id: 3,
                 author: "Eiichiro Oda",
                 name: "One Piece 08 (2023)",
-                image: "https://cdn.gramedia.com/uploads/picture_meta/2023/11/13/hfxetxlqxrvqksujtfmsk7.jpg",
+                image: "3.jpg",
                 category: "Komik",
                 price: 74000,
             },
             {
-                id: 5,
+                id: 4,
                 author: "Oh Su Hyang",
                 name: "Bicara Itu Ada Seninya",
-                image: "https://cdn.gramedia.com/uploads/items/9786024553920.png",
+                image: "4.png",
                 category: "Biografi",
                 price: 65000,
             },
             {
-                id: 6,
+                id: 5,
                 author: "Axie Oh",
                 name: "The Girl who Fell Beneath the Sea",
-                image: "https://cdn.gramedia.com/uploads/picture_meta/2023/2/14/iddphd9rbufdfjabf4owuf.jpg",
+                image: "5.jpg",
                 category: "Novel",
                 price: 55000,
             },
-            {
-                id: 7,
-                author: "Aoyama Gosho",
-                name: "Detective Conan 103",
-                image: "https://cdn.gramedia.com/uploads/picture_meta/2023/10/31/egxmfc5jkllsmadjjcklw2.jpg",
-                category: "Komik",
-                price: 40000,
-            },
-            {
-                id: 8,
-                author: "James Clear",
-                name: "Atomic Habits: Perubahan Kecil yang Memberikan Hasil Luar Biasa",
-                image: "https://cdn.gramedia.com/uploads/items/Atomic_Habits_C-FRONT_HC_-_Mockup.png",
-                category: "Buku",
-                price: 102400,
-            },
-            {
-                id: 9,
-                author: "Sarah Amijo",
-                name: "Journal Of Joy",
-                image: "https://cdn.gramedia.com/uploads/picture_meta/2023/11/10/whr7hn47apdpso8wglhrde.jpg",
-                category: "Buku",
-                price: 100000,
-            },
-            {
-                id: 10,
-                author: "Endo Tatsuya",
-                name: "Spy X Family 10",
-                image: "https://cdn.gramedia.com/uploads/picture_meta/2023/10/18/4kq5mvezwr7dmbagujtvev.jpg",
-                category: "Komik",
-                price: 36000,
-            },
         ],
     }));
+
+    Alpine.store("cart", {
+        items: [],
+        total: 0,
+        quantity: 0,
+        add(newItem) {
+            // cek apakah item sudah ada di cart
+            const cartItem = this.items.find((item) => item.id === newItem.id);
+
+            // jika item belum ada di cart
+            if (!cartItem) {
+                this.items.push({
+                    ...newItem,
+                    quantity: 1,
+                    total: newItem.price,
+                });
+                this.quantity++;
+                this.total += newItem.price;
+            } else {
+                this.items = this.items.map((item) => {
+                    if (item.id !== newItem.id) {
+                        return item;
+                    } else {
+                        item.quantity++;
+                        item.total = item.price * item.quantity;
+                        this.quantity++;
+                        this.total += item.price;
+                        return item;
+                    }
+                });
+            }
+        },
+        remove(id) {
+            const cartItem = this.items.find((item) => item.id === id);
+
+            if (cartItem.quantity > 1) {
+                this.items = this.items.map((item) => {
+                    if (item.id !== id) {
+                        return item;
+                    } else {
+                        item.quantity--;
+                        item.total = item.price * item.quantity;
+                        this.quantity--;
+                        this.total -= item.price;
+                        return item;
+                    }
+                });
+            } else if (cartItem.quantity === 1) {
+                this.items = this.items.filter((item) => item.id !== id);
+                this.quantity--;
+                this.total -= cartItem.price;
+            }
+        },
+    });
 });
+
+// Form Validation
+
+const checkoutButton = document.querySelector(".checkout-button");
+checkoutButton.disabled = true;
+
+const form = document.querySelector("#checkoutForm");
+
+form.addEventListener("keyup", function () {
+    for (let i = 0; i < form.elements.length; i++) {
+        if (form.elements[i].value.length !== 0) {
+            checkoutButton.classList.remove("disabled");
+            checkoutButton.classList.add("disabled");
+        } else {
+            return false;
+        }
+    }
+    checkoutButton.disabled = false;
+    checkoutButton.classList.remove("disabled");
+});
+
+checkoutButton.addEventListener("click", async function (e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = new URLSearchParams(formData);
+    const objData = Object.fromEntries(data);
+    // const message = formatMessage(objData);
+    // window.open(
+    //     "http://wa.me/6285797983833?text=" + encodeURIComponent(message)
+    // );
+
+    // Meminta transaction token mengunakan ajax / fetch
+
+    try {
+        const response = await fetch("php/placeOrder.php", {
+            method: "POST",
+            body: data,
+        });
+
+        const token = await response.text();
+        // console.log(token);
+        window.snap.pay(token);
+    } catch (err) {
+        console.log(err.message);
+    }
+});
+
+// Format pesan whatsapp
+
+const formatMessage = (obj) => {
+    return `Data Customer
+        Nama : ${obj.name}
+        Email : ${obj.email}
+        No Hp : ${obj.phone}
+    Data Pesanan
+        ${JSON.parse(obj.items).map(
+            (item) =>
+                `${item.name} (${item.quantity} x ${rupiah(item.total)}) \n`
+        )}
+    TOTAL : ${rupiah(obj.total)}
+    Terima Kasih.`;
+};
 
 // konfersi ke rupiah
 

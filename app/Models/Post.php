@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 
 
 class Post extends Model
@@ -31,6 +32,27 @@ class Post extends Model
                 $query->where('slug', $category);
             });
         });
+    }
+
+    public function search(Request $request)
+    {
+        if($request->ajax()) {
+            $output = "";
+            $posts = Post::where('title', 'LIKE', '%' . $request->search . '%')
+            ->orWhere('author', 'LIKE', '%' . $request->search . '%')
+            ->get();
+
+            if($posts) {
+                foreach($posts as $post) {
+                    $output .= '<tr>' .
+                                '<td>' . $post->title . '</td>' .
+                                '<td>' . $post->author . '</td>' .
+                                '</tr>';
+                }
+                return response()->json($output);
+            }
+        }
+        return view('home');
     }
 
     public function category()

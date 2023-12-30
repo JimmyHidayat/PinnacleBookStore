@@ -26,15 +26,30 @@
   border-bottom: 1px dashed #666;
 }
 
+#shopping-cart-button {
+  position: relative;
+}
+
+#shopping-cart-button .quantity-badge {
+  position: absolute;
+  top: 0;
+  right: -10px;
+  display: inline-block;
+  padding: 1px 5px;
+  border-radius: 6px;
+  font-size: 0.5rem;
+  background-color: #ff0000;
+  color: #ffffff;
+}
+
 .shopping-cart img {
-  height: 6rem;
-  width: 6rem;
+  height: 4rem;
+  width: 4rem;
   border-radius: 50%;
 }
 
 .shopping-cart h3 {
-  font-size: 1.6rem;
-  padding-bottom: 1.5rem;
+  font-size: 1.4rem;
 }
 
 .shopping-cart .item-price{
@@ -48,10 +63,77 @@
 
 }
 
-.shopping-cart .remove-item:hover {
-  color: #675d5d;
+.shopping-cart .cart-item #add,
+.shopping-cart .cart-item #remove {
+  display: inline-block;
+  padding; 2px 4px;
+  cursor: pointer;
+  margin: 0 4px;
+  background-color: #000000;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
+.shopping-cart h4 {
+  font-size: 1.6rem;
+  margin-top: -1rem;
+  text-align: center;
+
+}
+
+.form-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: 1px dashed black;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+
+.form-container h5 {
+  text-align: center;
+  font-size: 1rem;
+}
+
+.form-container form {
+  width: 100%;
+  text-align: center;
+}
+
+.form-container label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.form-container span {
+  text-align: right;
+}
+
+.form-container input {
+  background-color: #ddd;
+  padding: 5px;
+  font-size: 1rem;
+  width: 70%;
+}
+
+.form-container .checkout-button {
+  padding: 6px 14px;
+  background-color: royalblue;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 20px;
+  margin: 1rem auto;
+  cursor: pointer;
+}
+
+.form-container .checkout-button.disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
 
 </style>  
   
@@ -60,7 +142,7 @@
   
   
   <!-- Navbar -->
-  <nav class="bg-[#C1E1DC] border-gray-200 fixed w-full z-50 top-0 start-0">
+  <nav class="bg-[#C1E1DC] border-gray-200 fixed w-full z-50 top-0 start-0" x-data>
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
           <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-black" style="font-family: 'Caveat', cursive;">PinnacleBookStore.</span>
@@ -70,9 +152,9 @@
           <li>
             <a href="/" class="block py-2 px-3 text-black bg-blue-700 rounded md:bg-transparent md:p-0 hover:text-white">Home</a>
           </li>
-          <li>
+          {{-- <li>
             <a href="/about" class="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-white">About</a>
-          </li>
+          </li> --}}
           <li>
             <a href="/MyBooks" class="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-white">MyBooks</a>
           </li>
@@ -80,49 +162,56 @@
             <a href="/categories" class="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-white">Categories</a>
           </li>
           <li>
-            <a href="#" id="shopping-cart-button" class="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <a href="#" id="shopping-cart-button" class="block py-2 px-3 text-black rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0  md:p-0 hover:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent">
+              <span class="quantity-badge" x-show="$store.cart.quantity" x-text="$store.cart.quantity"></span><i class="fa fa-shopping-cart" aria-hidden="true"></i>
             </a>
 
             <div class="shopping-cart">
-              {{-- @foreach($posts as $post)
-              <div class="cart-item">
-                @if(str_contains($post->image, 'https:'))
-                <img src="{{ $post->image }}" alt="{{ $post->title }}">
-                @else
-                <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}">
-                @endif
-                <div class="item-detail">
-                  <h3>{{ $post->title }}</h3>
-                    <div class="item-price">
-                      {{ $post->price  }}
-                    </div>
+
+              <template x-for="(item, index) in $store.cart.items" x-key="index">
+                <div class="cart-item">
+                  <img :src="`img/${item.image}`" :alt="`item.name`">
+                  <div class="item-detail">
+                    <h3 x-text="item.name"></h3>
+                      <div class="item-price">
+                        <span x-text="rupiah(item.price)"></span> &times;
+                        <button id="remove" @click="$store.cart.remove(item.id)">&minus;</button>
+                        <span x-text="item.quantity"></span>
+                        <button id="add" @click="$store.cart.add(item)">&plus;</button> &equals;
+                        <span x-text="rupiah(item.total)"></span>
+                      </div>
+                  </div>
                 </div>
-                    <i class="remove-item"><svg xmlns="http://www.w3.org/2000/svg" height="20" width="18" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
-                    </i>
+              </template>
+              <h4 x-show="!$store.cart.items.length" style="margin-top: 1rem;">Cart Is Empty</h4>
+              <h4 x-show="$store.cart.items.length">Total : <span x-text="rupiah($store.cart.total)"></span></h4>
+              
+              <div class="form-container" x-show="$store.cart.items.length">
+                <form action="" id="checkoutForm">
+                  <input type="hidden" name="items" x-model="JSON.stringify($store.cart.items)">
+                  <input type="hidden" name="total" x-model="JSON.stringify($store.cart.total)">
+                  
+                  <h5>Customer Detail</h5>
+
+                  <label for="name">
+                    <span>Name :        </span>
+                    <input type="text" name="name" id="name">
+                  </label>
+
+                  <label for="email">
+                    <span>Email :       </span>
+                    <input type="email" name="email" id="email">
+                  </label>
+
+                  <label for="phone">
+                    <span>Phone :       </span>
+                    <input type="number" name="phone" id="phone" autocomplete="off">
+                  </label>
+
+                  <button class="checkout-button disabled" type="submit" id="checkout-button" value="checkout">Checkout</button>
+                </form>
               </div>
-              @endforeach --}}
-              <div class="cart-item">
-                <img src="https://source.unsplash.com/600x600?Book" alt="product1">
-                <div class="item-detail">
-                  <h3>Product</h3>
-                    <div class="item-price">
-                      IDR 100K
-                    </div>
-                </div>
-                    <i class="remove-item"><svg xmlns="http://www.w3.org/2000/svg" height="20" width="18" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
-                    </i>
-              </div>
-              <div class="cart-item">
-                <img src="https://source.unsplash.com/600x600?Book" alt="product1">
-                <div class="item-detail">
-                  <h3>Product</h3>
-                    <div class="item-price">
-                      IDR 100K
-                    </div>
-                </div>
-                    <i class="remove-item"><svg xmlns="http://www.w3.org/2000/svg" height="20" width="18" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
-                    </i>
-              </div>
+
             </div>
           </li>
 
@@ -169,6 +258,8 @@
     shoppingCart.classList.toggle('active');
     e.preventDefault();
    }
+
+   
 
   </script>
 
