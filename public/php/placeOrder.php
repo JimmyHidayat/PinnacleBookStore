@@ -30,7 +30,7 @@ $params = array(
     ),
     'item_details' => json_decode($_POST['items'], true),
     'customer_details' => array(
-        'first_name' => $_POST['name'],
+        'name' => $_POST['name'],
         'email' => $_POST['email'],
         'phone' => $_POST['phone'],
     ),
@@ -38,5 +38,12 @@ $params = array(
 
 $snapToken = \Midtrans\Snap::getSnapToken($params);
 
-echo $snapToken;
+// if ($snapToken) {
+//     return redirect('/MyBooks')->with([
+//         'token' => $snapToken
+//     ]);
+// } else {
+//     return redirect('/MyBooks')->with('error', 'Checkout gagal');
+// }
+ echo $snapToken;
 

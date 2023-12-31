@@ -33,6 +33,7 @@
         <option value="2">Buku</option>
         <option value="3">Biografi</option>
         <option value="4">Komik</option>
+        <option value="5">Api</option>
         </select>
     </div>
     <div class="col-span-2 mb-4">

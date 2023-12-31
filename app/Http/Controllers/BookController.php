@@ -15,65 +15,74 @@ class BookController extends Controller
      */
     public function index(Request $request)
     {
-        if($request->search != '') {
-            $response = Http::get('https://www.gramedia.com/api/algolia/search/product/?page=1&per_page=20&category=buku&based_on=best-seller'. $request->search .'');
-             $data = $response->json();
-            //  dd($data['results'][0]['generic_name'][0]['active_ingredients'][0]['strength']);
-            // dd(array_keys($data)[0] == 'error');
-            if(array_keys($data)[0] != 'error' ) {
-                return view('home', [
-                    'title' => $data['results'][0]['title'],
-                    'author' => $data['results'][0]['author'][0]['strength']]);
-            }else {
-                return view('dashboard.obat.index', [
-                    'title' => $data['error']['message'],
-                    'author' => $data['error']['message']]);
+
+        $api = Http::get('https://www.gramedia.com/api/algolia/search/product/?page=1&per_page=20&category=buku&based_on=best-seller');
+        $book = [];
+        $api = $api->json();
+        $api = collect($api)->take(20);
+        // dd($api->json());
+        foreach($api as $a){
+            if(!Post::where('title', $a['name'])->exists()){
+                Post::create([
+                    'title' => $a['name'],
+                    'author' => $a['authors'][0]['title'],
+                    'category_id' => 5,
+                    'image' => $a['thumbnail'],
+                    'price' => $a['basePrice']
+                ]);
+            } else {
+                $book[] = Post::where('title', $a['name'])->first();
             }
-        }else {
-            return view('home', ['title' => []]);
+            // $book[] = [
+            //     'name' => $a['name'],
+            //  $bookResources => $a['authors'][0]['title'],
+            //     'basePrice' => $a['basePrice'],
+            //     'thumbnail' => $a['thumbnail']
+            // ];
         }
 
-        $posts = Post::all();
-        // $posts = Http::all('https://www.gramedia.com/api/algolia/search/product/?page=1&per_page=20&category=buku&based_on=best-seller');
+        // dd($book);
 
-        $bookResources = BookResource::collection($posts);
+        // $api = $api['name'];
+        return redirect('/dashboard/posts');
 
-        return $this->sendResponse($bookResources, "Successfully Get Books");
+        // $posts = Post::all();
+        
+
+        // $bookResources = BookResource::collection($posts);
+
+        // return $this->sendResponse($bookResources, "Successfully Get Books");
     }
 
-    // public function search(Request $request){
+    public function search(Request $request){
 
-    //     if($request->ajax()){
+        if($request->ajax()){
     
-    //         $data=Post::where('title','like','%'.$request->search.'%')
-    //         ->orwhere('author','like','%'.$request->search.'%')
-    //         ->get();
+            $data=Post::where('title','like','%'.$request->search.'%')
+            ->orwhere('author','like','%'.$request->search.'%')
+            ->get();
     
     
-    //         $output='';
-    //         $counter = 1;
-    //     if(count($data)>0){
-    //             foreach ($data as $row) {
-    //                 $output .= '<tr>' .
-    //                             '<td>' . $counter++ . '</td>' .
-    //                             '<td>' . $row->title . '</td>' .
-    //                             '<td>' . $row->author . '</td>' .
-    //                             '<td>' . $row->genre . '</td>' .
-    //                             '<td>' . $row->category_id . '</td>' .
-    //                             '<td>' . $row->price . '</td>' .
-    //                             '<td>' . $row->description . '</td>' .
-    //                             '</tr>';
-    //                 }
-    //         } else {
-    //             $output .= '<tr>' .
-    //                         '<td colspan="7">No results found</td>' .
-    //                         '</tr>';
-    //         }
+            $output='';
+            $counter = 1;
+        if(count($data)>0){
+                foreach ($data as $row) {
+                    $output .= '<tr>' .
+                                '<td>' . $counter++ . '</td>' .
+                                '<td>' . $row->title . '</td>' .
+                                '<td>' . $row->author . '</td>' .
+                                '</tr>';
+                    }
+            } else {
+                $output .= '<tr>' .
+                            '<td colspan="7">No results found</td>' .
+                            '</tr>';
+            }
     
-    //         return $output;
-    //     }
+            return $output;
+        }
     
-    //   }
+      }
 
     /**
      * Show the form for creating a new resource.
