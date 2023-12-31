@@ -65,24 +65,30 @@ class DatabaseSeeder extends Seeder
             'image' => 'https://cdn.gramedia.com/uploads/items/9786020523316_Melangkah_UV_Spot_R4-1.jpg'
         ]);
         Post::create([
-            'title' => 'Laut Bercerita',
-            'author' => 'Leila S. Chudori',
+            'title' => 'Filosofi Teras',
+            'author' => 'Henry Manampiring',
             'category_id' => 1,
             'genre' => 'Fiksi',
-            'price' => 84000,
-            'description' => 'Buku ini terdiri atas dua bagian. Bagian pertama mengambil sudut pandang seorang mahasiswa aktivis bernama Laut, menceritakan bagaimana Laut dan kawan-kawannya menyusun rencana, berpindah-pindah dalam pelarian, hingga tertangkap oleh pasukan rahasia. Sedangkan bagian kedua dikisahkan oleh Asmara, adik Laut. Bagian kedua mewakili perasaan keluarga korban penghilangan paksa, bagaimana pencarian mereka terhadap kerabat mereka yang tak pernah kembali.
-            Buku ini ditulis sebagai bentuk tribute bagi para aktivis yang diculik, yang kembali, dan yang tak kembali dan keluarga yang terus menerus sampai sekarang mencari-cari jawaban. Novel ini merupakan perwujudan dalam bentuk fiksi bahwa kita sebagai bangsa Indonesia tidak boleh melupakan sejarah yang telah membentuk sekaligus menjadi tumpuan bangsa Ini. Novel ini juga mengajak pembaca menguak misteri-misteri bangsa ini yang mana tidak diajarkan di sekolah. Walaupun novel ini adalah fiksi, laut bercerita menunjukkan kepada pembaca bahwa negeri ini pernah memasuki masa pemerintahan yang kelam. Laut Bercerita, novel terbaru Leila S. Chudori, bertutur tentang kisah keluarga yang kehilangan, sekumpulan sahabat yang merasakan kekosongan di dada, sekelompok orang yang gemar menyiksa dan lancar berkhianat, sejumlah keluarga yang mencari kejelasan makam anaknya, dan tentang cinta yang tak akan luntur.',
-            'image' => 'https://cdn.gramedia.com/uploads/items/9786024246945_Laut-Bercerita.png'
+            'price' => 88200,
+            'description' => 'Lebih dari 2000 tahun lalu, sebuah mazhab filsafat menemukan akar masalah dan juga solusi dari banyak emosi negatif. Stoisisme, atau Filosofi Teras, adalah filsafat Yunani-Romawi kuno yang bisa membantu kita mengatasi emosi negatif dan menghasilkan mental yang tangguh dalam menghadapi naik-turun nya kehidupan.
+            Jauh dari kesan filsafat sebagai topik berat dan mengawang-awang, Filosofi Teras justru bersifat praktis dan relevan dengan kehidupan Generasi Milenial dan Gen-Z masa kini.
+            Buku yang pertama kali diterbitkan pada 2019 ini mengajarkan kita tentang pengendalian emosi negatif yang ada dalam diri kita. Buku Filosofi Teras menjadi buku mega best seller, dan memenangkan Book of the Year di Indonesia International Book Fair pada 2019. Filosofi Teras memiliki tebal sebanyak 344 halaman.
+            Buku ini mudah dipahami dengan ilustrasi tokoh filsafat, serta kata-kata bijak yang menambah daya tarik dalam membaca. Buku karangan Henry Manampiring ini sangat cocok dibaca untuk para generasi milenial, dan Gen Z dalam menghadapi ketakutan, kekhawatiran, kecemasan, serta hal negatif lainnya.
+            Awal mula kehadiran buku ini tidak lain dari latar belakang kondisi sang penulis yang didiagnosis major depressive disorder. Hingga akhirnya ia menemukan buku tentang penerapan filsafat stoa dalam hidup.
+            Stoa sendiri identik dengan kesederhanaan, dan menerima keadaan yang tidak bisa dikendalikan. Namun, stoicism bukan berarti pasrah dan tidak peduli sama sekali. Filsafat ini mengajarkan kita untuk memiliki prinsip indifferent.',
+            'image' => 'https://cdn.gramedia.com/uploads/items/img20220101_11444970.jpg'
         ]);
         Post::create([
-            'title' => 'Jujutsu Kaisen 12',
-            'author' => 'Gege Akutami',
-            'category_id' => 4,
-            'genre' => 'Sains Fiksi',
-            'price' => 55000,
-            'description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam interdum cursus dolor, vel consectetur quam aliquam vitae. Vestibulum venenatis, quam ut venenatis fermentum, elit odio commodo nulla, ut scelerisque erat mi vitae eros. Duis nec massa vel justo euismod tincidunt id id justo. Fusce sollicitudin euismod nisl ut congue. Nunc tincidunt sodales enim, ut luctus ex feugiat eget. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam erat volutpat. In hac habitasse platea dictumst. Suspendisse eget lectus semper, sollicitudin turpis a, gravida urna.
-            Praesent aliquet, lacus id vulputate gravida, quam est fermentum velit, a tincidunt lacus mi eget lacus. Vivamus hendrerit felis euismod, dignissim felis vel, vestibulum tortor. Ut id urna eget libero commodo egestas. Aliquam erat volutpat. Phasellus ac justo vitae elit scelerisque varius. Quisque consequat, arcu a vulputate dictum, erat odio tincidunt mi, eu varius libero dolor in libero. Integer auctor, elit ac fermentum vulputate, sapien justo feugiat metus, eu tristique neque sapien sit amet risus. Nam eu orci vel ex tincidunt feugiat.',
-            'image' => 'https://cdn.gramedia.com/uploads/picture_meta/2023/11/17/efri6damk2qz3tuvwn4car.jpg'
+            'title' => 'Amr bin Ash',
+            'author' => 'Dr. Mahmud Syalabi',
+            'category_id' => 3,
+            'genre' => 'Fiksi',
+            'price' => 99000,
+            'description' => 'Nama Amr bin Ash sangat terkenal dalam sejarah Islam. Sahabat dekat Nabi Muhammad dan panglima besar penakluk Mesir, Afrika Utara, dan Palestina ini juga seorang politikus kontroversial, bahkan dianggap sebagai pengkhianat dan pemberontak: dari menolak membaiat Ali, berpihak kepada Muawiyah dalam Perang Shiffin, hingga peristiwa tahkim (arbitrase) yang merupakan puncak dari konflik besar pertama yang berdarah-darah di antara sesama Muslim.
+            Di balik sosoknya yang kontroversial, Amr punya pandangan yang kuat dan visioner. Mulai dari komitmennya membela Utsman yang tewas dibunuh tetapi para pelakunya tak kunjung diusut oleh Ali, filosofi dan taktik politiknya, hingga pemikirannya tentang masa depan Islam dan kaum Muslim di wilayah baru yang jauh dari pusat Islam di Madinah. Bagi Amr, politik adalah urusan duniawi yang dinamis, dan model politik khilafah tak lagi relevan dan efektif untuk mengontrol wilayah taklukan yang luas.
+            Sosok seorang laki-laki yang tiada bandingannya dan masuk di jajaran minoritas orang yang tidak ditemukan dalam banyak peradaban, kecuali jumlahnya amat sedikit. Allah telah menganugerahkannya akal yang cerdas, menyinari batinnya dengan cahaya Islam, dan menjadikannya sosok yang selalu menjalankan berbagai perbuatan mulia dengan penuh kesungguhan tanpa mengenal rasa jemu sedikit pun. Kesungguhan itulah yang mampu menggetarkan singgasana para kaisar dan memberangus angan-angan para panglima besar. la terkenal memiliki kepiawaian yang luar biasa dan keahlian dalam berpolitik.
+            Buku ini menjelaskan seorang Amr bin Ash yang sangat berjasa terhadap Islam dan kaum Muslim, tetapi kemudian dianggap sebagai pengkhianat, pemberontak, serta ambisius terhadap kekayaan dan kekuasaan. Penulisnya tak membela mati-matian Amr, tak juga mencelanya habis-habisan, tetapi menggambarkan sosoknya secara objektif dan proporsional yang jarang dilakukan para penulis biografi tentangnya.',
+            'image' => 'https://cdn.gramedia.com/uploads/picture_meta/2023/11/17/byxipf6gjphe3qcggsccrz.jpg'
         ]);
         Post::create([
             'title' => 'One Piece 08 (2023)',
@@ -96,7 +102,7 @@ class DatabaseSeeder extends Seeder
         Post::create([
             'title' => 'Bicara Itu Ada Seninya',
             'author' => 'Oh Su Hyang',
-            'category_id' => 3,
+            'category_id' => 2,
             'genre' => 'Psikologi',
             'price' => 65000,
             'description' => '"TAHUKAH ANDA BAHWA BERBICARA ITU ADA SENINYA? Ketika komunikasi menjadi hal yang penting untuk bersaing, pakar komunikasi Oh Su Hyang mengeluarkan buku yang sangat berarti. Selain berisi tentang pengalaman peningkatan diri, buku ini juga memuat berbagai konten mengenai teknik komunikasi, persuasi, dan negosiasi. 

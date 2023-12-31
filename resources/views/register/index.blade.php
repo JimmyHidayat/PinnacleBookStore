@@ -51,22 +51,39 @@
 
                     </div>
                 @endif
+                
+                @if(session()->has('error'))
+                    <div id="notification" class="w-full max-w-xs p-4 text-gray-900 bg-white rounded-lg shadow dark:bg-gray-800 dark:text-gray-300" role="alert">
+                    <div class="flex items-center mb-3">
+                    <span class="mb-1 text-sm font-semibold text-gray-900 dark:text-white">New notification</span>
+                    <button type="button" class="ms-auto -mx-1.5 -my-1.5 bg-white justify-center items-center flex-shrink-0 text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700" data-dismiss-target="#notification" aria-label="Close">
+                    <span class="sr-only">Close</span>
+                    <svg class="w-3 h-3" aria-hidden="true" fill="none" viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                     </svg>
+                    </button>
+                    </div>
+
+                 {{ session('error') }}
+
+                    </div>
+                @endif
                 @csrf
             <h5 class="text-center text-[35px] font-medium text-black pb-5 ">Register</h5>
             <div class="relative z-0 w-full mb-5 group">
-                <input type="text" name="username" id="username" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-[#3d7f75] appearance-none text-[#469185]  focus:outline-none focus:ring-0 focus:border-[#61b3a6] peer" placeholder=" " @error('username') is-invalid @enderror value="{{ old('username') }}" />
+                <input type="text" name="username" id="username" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-[#3d7f75] appearance-none text-black  focus:outline-none focus:ring-0 focus:border-[#61b3a6] peer" placeholder=" " @error('username') is-invalid @enderror value="{{ old('username') }}" />
                 <label for="floating_first_name" class="peer-focus:font-medium absolute text-sm text-[#6bb8ac] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#61b3a6] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Username</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
-                <input type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-[#3d7f75] appearance-none text-[#61b3a6]  focus:outline-none focus:ring-0 focus:border-[#61b3a6] peer" placeholder=" " @error('email') is-invalid @enderror value="{{ old('username') }}" />
+                <input type="email" name="email" id="email" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-[#3d7f75] appearance-none text-black focus:outline-none focus:ring-0 focus:border-[#61b3a6] peer" placeholder=" " @error('email') is-invalid @enderror value="{{ old('username') }}" />
                 <label for="floating_email" class="peer-focus:font-medium absolute text-sm text-[#6bb8ac] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#61b3a6] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Email address</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
-                <input type="password" name="password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-[#3d7f75] appearance-none text-[#61b3a6]  focus:outline-none focus:ring-0 focus:border-[#61b3a6] peer" placeholder=" " @error('password') is-invalid @enderror/>
+                <input type="password" name="password" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-[#3d7f75] appearance-none text-black  focus:outline-none focus:ring-0 focus:border-[#61b3a6] peer" placeholder=" " @error('password') is-invalid @enderror/>
                 <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-[#6bb8ac] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#61b3a6] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Password</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
-                <input type="password" name="confirmPassword" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-[#3d7f75] appearance-none text-[#61b3a6]  focus:outline-none focus:ring-0 focus:border-[#61b3a6] peer" placeholder=" " @error('confirmPassword') is-invalid @enderror />
+                <input type="password" name="confirmPassword" id="floating_repeat_password" class="block py-2.5 px-0 w-full text-sm bg-transparent border-0 border-b-2 border-[#3d7f75] appearance-none text-black focus:outline-none focus:ring-0 focus:border-[#61b3a6] peer" placeholder=" " @error('confirmPassword') is-invalid @enderror />
                 <label for="floating_repeat_password" class="peer-focus:font-medium absolute text-sm text-[#6bb8ac] duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-[#61b3a6] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Confirm password</label>
             </div>
             {{-- <div class="grid md:grid-cols-2 md:gap-6">

@@ -8,11 +8,11 @@
                     color: #ffffff; 
                 } */
 
-                .search-form input {
+                #searchForm input {
                     color: #000000; /* Warna teks gelap */
                 }
 
-                .search-form {
+                #searchForm {
                     width: 80%; /* Lebar formulir 80% dari lebar layar */
                     margin: auto; /* Pusatkan formulir di tengah layar */
                     padding: 18px; /* Beri jarak antara tulisan dengan form */
@@ -79,8 +79,8 @@
     {{-- Akhir Carousel --}}
 
     {{-- Search --}}
-            <section class="search-form">
-                <form action="/">   
+            {{-- <section class="search-form"> --}}
+                <form action="/" id="searchForm">   
                     <label for="search" class="mb-2 text-sm font-medium sr-only">Search</label>
                     <div class="relative">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -92,9 +92,10 @@
                         <button type="submit" class="text-black absolute end-2.5 bottom-2.5 bg-[#FFCCAC] hover:bg-[#FFCCAC] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-[#FFCCAC] dark:hover:bg-[#FFCCAC] dark:focus:ring-[#FFCCAC] hover:text-white">Search</button>
                     </div>
                 </form>   
-            </section>
+            {{-- </section> --}}
     {{-- Akhir Search --}}
 
+    
             <div class="mt-8 container mx-auto flex items-center justify-between">
                 <h1 class="font-bold text-2xl ml-8">Rekomendasi Untukmu</h1>
                 <a href="/categories" class="with-banner flex mr-7 py-2 px-4 bg-[#FFCCAC] text-black rounded-md hover:text-white">
@@ -102,14 +103,12 @@
                 </a>
             </div>
 
-
-
             <!-- card 1 -->
         
         <div class="read" id="read">
-            <section class="mx-5 my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 home ml-6" x-data="products">
+            <section class="mx-5 my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 home ml-6">
                 @foreach ($posts as $post)
-                    <div class="w-full max-w-[125%] border border-black rounded-lg shadow" id="products">
+                    <div class="w-full max-w-[125%] border border-black rounded-lg shadow" >
                         @if (str_contains($post->image, 'https:'))
                         <div class="max-h-475px max-w-303px overflow-hidden">
                             <img class="p-8 rounded-t-lg w-[100%]" src="{{ $post->image }}" alt="{{ $post->title }}" />
@@ -130,48 +129,51 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="">
-                                        <h3 class="text-xl font-sans hover:font-serif tracking-tight text-gray-900">{{ $post->category->name }}</h3>
-                                    </a>
+                                    <h3 class="text-xl font-sans tracking-tight text-gray-900">{{ $post->category->name }}</h3>
                                 </li>
                             </ul>
                             <div class="flex items-center justify-between">
                                 <small class="text-2xl font-bold text-gray-900">Rp.{{ $post->price }}</small>
-                                <a href="#" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5
-                                text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" >Add to cart</a>
                             </div>
                         </div>
                     </div>
                 @endforeach
             </section>
         </div>
-        
 
-            <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-
+            <!-- JavaScript -->
             <script>
-            // search();
-            $(document).ready(function(){
-                $("#search").on ('keyup', function() {
-                    var value = $("#search").val();
-                    if(value != ""){
-                        // $("#read").html("");
-                        $.ajax({
-                            url: "/",
-                            type: 'GET',
-                            data: {search:value},
-                            success: function(data){
-                                $("#read").html(data);
-                            }
-                        });
-                    }
+                $(document).ready(function(){
+                    $("#search").on('keyup', function() {
+                        var value = $("#search").val();
+                        if (value != "") {
+                            $.ajax({
+                                url: "/",
+                                type: 'GET',
+                                data: { search: value },
+                                success: function(data) {
+                                    // Update hanya bagian hasil pencarian di elemen dengan ID "read"
+                                    $("#read").html(data);
+                                }
+                            });
+                        } else {
+                            // Jika nilai pencarian kosong, tampilkan semua hasil
+                            $.ajax({
+                                url: "/",
+                                type: 'GET',
+                                success: function(data) {
+                                    // Update hanya bagian hasil pencarian di elemen dengan ID "read"
+                                    $("#read").html(data);
+                                }
+                            });
+                        }
+                    });
                 });
-            })
             </script>
             
             
 
-            <div class="flex justify-center">
+           <div class="flex justify-center">
                 {{ $posts->links() }}
             </div>
 @endsection

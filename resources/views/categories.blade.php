@@ -24,8 +24,17 @@
         </div>
 
         <div class="justify-center flex mt-8 font-medium">
-            <h1 style="font-size: 30px;">All Posts</h1>
-        </div>
+            @if(isset($_GET['category']))
+                @foreach ($categories as $category)
+                    @if($_GET['category'] == $category->slug)
+                        <h1 style="font-size: 30px;">All Posts: {{ $category->name }}</h1>
+                    @endif
+                @endforeach
+            @else
+                <h1 style="font-size: 30px;">All Posts</h1>
+            @endif
+        </div>          
+                    
 
         <section class="mx-5 my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 home ml-6 mt-8">
             

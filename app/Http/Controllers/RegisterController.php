@@ -24,24 +24,25 @@ class RegisterController extends Controller
             'confirmPassword' => 'required|same:password'
         ]);
 
-        $validatedData['password'] = bcrypt($validatedData['password']);
-        $validatedData['confirmPassword'] = bcrypt($validatedData['confirmPassword']);
+        $validatedData['password'] = $validatedData['password'];
+        $validatedData['confirmPassword'] = $validatedData['confirmPassword'];
 
-        
+        // Check if password matches confirm password
+        if ($validatedData['password'] !== $request->input('confirmPassword')) {
+            return redirect('/login')->with('error', 'Password must be the same');
+        }
+
+        $validatedData['password'] = bcrypt($validatedData['password']);
+
         User::create($validatedData);
 
+        return redirect('/login')->with('success', 'Registration Successful! Please Login!');
+
+        
+        
+        // User::create($validatedData);
         // $request->session()->flash('success', 'Registration successfull! Please Login');
-
-       
-        return redirect('/login')->with('success', 'Registration Successfull! Please Login!');
-        
+        // return redirect('/login')->with('success', 'Registration Successfull! Please Login!');
         // return redirect('/register')->with('failed', 'Passwords must be the same');
-       
-        
-        
-        
-        
-     
-
     }
 }
