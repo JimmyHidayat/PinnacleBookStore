@@ -52,6 +52,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'Komik',
             'slug' => 'komik'
         ]);
+        
+        Category::create([
+            'name' => 'Api',
+            'slug' => 'api'
+        ]);
 
         Post::create([
             'title' => 'Melangkah',

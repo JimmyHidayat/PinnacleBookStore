@@ -34,27 +34,6 @@ class Post extends Model
         });
     }
 
-    public function search(Request $request)
-    {
-        if($request->ajax()) {
-            $output = "";
-            $posts = Post::where('title', 'LIKE', '%' . $request->search . '%')
-            ->orWhere('author', 'LIKE', '%' . $request->search . '%')
-            ->get();
-
-            if($posts) {
-                foreach($posts as $post) {
-                    $output .= '<tr>' .
-                                '<td>' . $post->title . '</td>' .
-                                '<td>' . $post->author . '</td>' .
-                                '</tr>';
-                }
-                return response()->json($output);
-            }
-        }
-        return view('home');
-    }
-
     public function category()
     {
         return $this->belongsTo(Category::class);

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminCategoryController;
+use App\Http\Controllers\BookController;
 use App\Http\Controllers\CategoryController;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
@@ -13,6 +14,7 @@ use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CetakController;
 use App\Http\Controllers\OrdersController;
+use App\Models\Book;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -142,5 +144,7 @@ Route::get('/contact', function () {
 // Route::post('/placeOrder', 'OrdersController@handlePlaceOrder');
 
 
-Route::get('search', [Post::class, 'search']);
-Route::get('searchResult', [Post::class, 'searchResult']);
+Route::get('search', [PostController::class, 'search']);
+// Route::get('searchResult', [Post::class, 'searchResult']);
+
+Route::get('/index', [BookController::class, 'index']); 

@@ -106,9 +106,14 @@
             <!-- card 1 -->
         
         <div class="read" id="read">
+            
+        </div>
+
+
+
             <section class="mx-5 my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 home ml-6">
                 @foreach ($posts as $post)
-                    <div class="w-full max-w-[125%] border border-black rounded-lg shadow" >
+                    <div class="w-full max-w-[125%] border border-black rounded-lg shadow"  >
                         @if (str_contains($post->image, 'https:'))
                         <div class="max-h-475px max-w-303px overflow-hidden">
                             <img class="p-8 rounded-t-lg w-[100%]" src="{{ $post->image }}" alt="{{ $post->title }}" />
@@ -139,34 +144,28 @@
                     </div>
                 @endforeach
             </section>
-        </div>
+       
 
             <!-- JavaScript -->
+            <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
             <script>
                 $(document).ready(function(){
                     $("#search").on('keyup', function() {
                         var value = $("#search").val();
-                        if (value != "") {
-                            $.ajax({
-                                url: "/",
-                                type: 'GET',
-                                data: { search: value },
-                                success: function(data) {
-                                    // Update hanya bagian hasil pencarian di elemen dengan ID "read"
-                                    $("#read").html(data);
-                                }
-                            });
+                        if (value == "") {
+                            value = "all";
                         } else {
-                            // Jika nilai pencarian kosong, tampilkan semua hasil
-                            $.ajax({
-                                url: "/",
+                            value = value;
+                        }
+                        $.ajax({
+                                url: "search",
                                 type: 'GET',
+                                data: { 'search': value },
                                 success: function(data) {
                                     // Update hanya bagian hasil pencarian di elemen dengan ID "read"
                                     $("#read").html(data);
                                 }
                             });
-                        }
                     });
                 });
             </script>

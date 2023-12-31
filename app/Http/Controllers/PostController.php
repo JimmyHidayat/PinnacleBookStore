@@ -39,6 +39,46 @@ class PostController extends Controller
         //
     }
 
+    public function search(Request $request)
+    {
+        if($request->ajax()) {
+            $output = '<section class="mx-5 my-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 home ml-6">';
+            $posts = Post::where('title', 'LIKE', '%' . $request->search . '%')
+            ->orWhere('author', 'LIKE', '%' . $request->search . '%')
+            ->get();
+
+            if($posts) {
+                foreach($posts as $post) {
+                    $output .= '<div class="w-full max-w-[125%] border border-black rounded-lg shadow"  >'.
+                    '<div class="max-h-475px max-w-303px overflow-hidden">
+                        <img class="p-8 rounded-t-lg w-[100%]" src=" '.asset("storage/" . $post->image).' " alt=" '.$post->title.' " />
+                    </div>
+                    <div class="px-5 pb-5">
+                        <ul>
+                            <li>
+                                <h5 class="text-xl font-sans tracking-tight text-gray-900"> '.$post->author.' </h5>
+                            </li>
+                            <li>
+                                <a href="/showHome/ '.$post->title.'  ">
+                                    <h3 class="text-xl font-sans hover:font-serif tracking-tight text-gray-900"> '.$post->title.' </h3>
+                                </a>
+                            </li>
+                            <li>
+                                <h3 class="text-xl font-sans tracking-tight text-gray-900"> '.$post->category->name.' </h3>
+                            </li>
+                        </ul>
+                        <div class="flex items-center justify-between">
+                            <small class="text-2xl font-bold text-gray-900">Rp. '.$post->price.' </small>
+                        </div>
+                    </div>
+                </div>';
+                }
+                $output .= '</section>';
+                return $output;
+            }
+        }
+        return 'not found';
+    }
     
 
     /**

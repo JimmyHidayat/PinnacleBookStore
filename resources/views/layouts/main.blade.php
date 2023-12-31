@@ -45,11 +45,11 @@
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous">
         </script> --}}
-        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        {{-- <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script> --}}
 
-        {{-- <script type="text/javascript"
+        <script type="text/javascript"
             src="https://app.stg.midtrans.com/snap/snap.js"
             data-client-key="SB-Mid-client-klZcvxCtDLeX8Ixn">
-          </script> --}}
+          </script>
     </body>
 </html>
