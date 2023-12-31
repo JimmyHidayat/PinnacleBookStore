@@ -124,25 +124,24 @@ checkoutButton.addEventListener("click", async function (e) {
     const formData = new FormData(form);
     const data = new URLSearchParams(formData);
     const objData = Object.fromEntries(data);
-    // const message = formatMessage(objData);
-    // window.open(
-    //     "http://wa.me/6285797983833?text=" + encodeURIComponent(message)
-    // );
+    const message = formatMessage(objData);
+    window.open(
+        "http://wa.me/6285797983833?text=" + encodeURIComponent(message)
+    );
 
     // Meminta transaction token mengunakan ajax / fetch
 
-    try {
-        const response = await fetch("php/placeOrder.php", {
-            method: "POST",
-            body: data,
-        });
-
-        const token = await response.text();
-        // console.log(token);
-        window.snap.pay(token);
-    } catch (err) {
-        console.log(err.message);
-    }
+    // try {
+    //     const response = await fetch("php/placeOrder.php", {
+    //         method: "post",
+    //         body: data,
+    //     });
+    //     const token = await response.text();
+    //     window.snap.pay(token);
+    //     console.log(token);
+    // } catch (err) {
+    //     console.log(err.message);
+    // }
 });
 
 // Format pesan whatsapp

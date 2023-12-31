@@ -21,11 +21,7 @@
   <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="/js/app.js" async></script>
-
-  <script type="text/javascript"
-		src="https://app.stg.midtrans.com/snap/snap.js"
-    data-client-key="SB-Mid-client-klZcvxCtDLeX8Ixn">
-  </script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   
   {{-- <style>
     .self-center {
@@ -51,5 +47,9 @@
         </script> --}}
         <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
+        {{-- <script type="text/javascript"
+            src="https://app.stg.midtrans.com/snap/snap.js"
+            data-client-key="SB-Mid-client-klZcvxCtDLeX8Ixn">
+          </script> --}}
     </body>
 </html>
