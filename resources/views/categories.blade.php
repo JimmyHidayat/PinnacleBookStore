@@ -16,6 +16,8 @@
                             <a href="/categories?category={{ $category->slug }}" class="justify-center text-black hover:text-white border border-[#C1E1DC] bg-[#FFCCAC] focus:ring-4 focus:outline-none focus:ring-[#C1E1DC] rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:focus:ring-blue-80">{{ $category->name }}</a>
                         @elseif($category->id == 4)
                             <a href="/categories?category={{ $category->slug }}" class="justify-center text-black hover:text-white border border-[#C1E1DC] bg-[#FFCCAC] focus:ring-4 focus:outline-none focus:ring-[#C1E1DC] rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:focus:ring-blue-80">{{ $category->name }}</a>
+                        @elseif($category->id == 5)
+                            <a href="/categories?category={{ $category->slug }}" class="justify-center text-black hover:text-white border border-[#C1E1DC] bg-[#FFCCAC] focus:ring-4 focus:outline-none focus:ring-[#C1E1DC] rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3 dark:focus:ring-blue-80">{{ $category->name }}</a>
                             <a href="/categories" class="justify-center text-black hover:text-white border border-[#C1E1DC] bg-[#FFCCAC] focus:ring-4 focus:outline-none focus:ring-[#C1E1DC] rounded-full text-base font-medium px-5 py-2.5 text-center me-3 mb-3  dark:focus:ring-blue-80">Back To All Posts</a>
                         @endif        
                     @endforeach
